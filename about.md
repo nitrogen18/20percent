@@ -12,12 +12,26 @@ Over the course of time, I have developed interest in many things including cogn
 
 I have a podcast by the same name called the "[[Knowledge Continuum::https://open.spotify.com/show/5zR7IUdCZAtP0m4Ef8bMgs]]".
 
+Colons can be used to align columns.
+
+| Competition        | Rankings          |
+| ------------- |:-------------:|
+| Ateneo Computer Programming Competition (ACPC)      | 2nd      |
+| Ateneo Competitive Programming League Tryouts (ACPL)     | 2nd |
+| CS Week: Battle of the Brains, Team FrostByte | 2nd      |
+| LoveBytes: A Gender Equal Programming Contest | 3rd      |
+| ACM ICPC Philippines Southern Luzon | 5th      |
+| Ateneo Programming Challenge (APC) 2018 | 5th      |
+| ACM ICPC Philippine National Programming Contest 2017 | 7th      |
+| Ateneo Programming Challenge (APC) 2017 | 7th      |
+
+
 ---
 
 ## Reach out to me
 
 [[Twitter::https://twitter.com/raghuveerdotnet]] – Shoot me a dm or just tweet ***@raghuveerdotnet***. I will try to reply as soon as I can. Sadly, I am not available on any other social media sites. I am not really into professional social media circle but anyway here is my [[linkedin::https://www.linkedin.com/in/sraghuveer/]] just in case.
-    
+
 Bangalore is pretty large, so I can’t promise but If you happen to be in Bangalore by chance and want to chat, drop an email([[raghu@raghuveer.net::mailto:raghu@raghuveer.net]]) and include [Coffee] in the subject line, and we can work something out.
 
 If you like anything about who I am or what I do, please do follow me or reach out to me. Don’t hesitate.
@@ -41,7 +55,7 @@ If you like anything about who I am or what I do, please do follow me or reach o
 \- 12-10-19 Searchbar. <br/>
 ::rmn]]Features:
 
-- **Page preview** (Move your mouse over the link): [[Test note to verify features on this website]] 
+- **Page preview** (Move your mouse over the link): [[Test note to verify features on this website]]
 - **Transclusion**: Allows you to see a partial view of the contents of the website to the right or the left of the margin.
 - **Sidenotes** (Changelog you see on the left is an example of this).
 - **Wiki-style link:** Usually wikis allow you to specify links using double bracket, I added it here using liquid. Also added bad-link highlighting
@@ -68,4 +82,3 @@ Other Details:
 
 {:.boxit}
 > The design of the website is inspired by multiple sources with the intention of making the website more functional. Having said that, I am not a skilled front-end developer/UI-developer, so I could only come somewhat closer to my inital design that I sketched *(see left or click on this &#8853; icon beside the question above if you are on a mobile device)*, hopefully this will clear why it's structured the way it is. In fact, I had to remove the lab option because of my current inability to design it. That said, I can also safely say that I am improving based on the initial iterations of the website that can be seen here: [[Jan-22-2020::https://web.archive.org/web/20200122164405/raghuveer.net]], [[Apr-13-2020::https://web.archive.org/web/20200413193808/raghuveer.net]], [[Apr-20-2020::https://web.archive.org/web/20200420172058/raghuveer.net]]
-
