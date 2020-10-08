@@ -1,19 +1,19 @@
-title: Simply Jekyll
-name: John Doe
-user_description: Programmer (Interested in Philosophy and Math)
+title: iOS Development
+name: Nitrogen
+user_description: Former ACM ICPC 2017 Asia-Manila Competitive Programmer
 notes_url: "https://simply-jekyll.netlify.app"
-profile_pic: /assets/img/profile.png
+profile_pic: /assets/img/profile-icon.jpg
 favicon: /assets/img/favicon.png
-copyright_name: John Doe
+copyright_name: nitrogen17
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://simply-jekyll.netlify.app/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://github.com/nitrogen17" # the base hostname & protocol for your site, e.g. http://example.com
 encoding: utf-8
 
 # Build settings
 theme: null
 plugins:
-  - jekyll-feed 
-  - jekyll-sitemap 
+  - jekyll-feed
+  - jekyll-sitemap
 
 markdown: kramdown
 
