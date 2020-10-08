@@ -4,7 +4,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Knowledge Continuum" property="og:site_name"/>
     <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
-    <meta content="http://localhost:4000/about/" property="article:author"><meta content="Introduction to Simply Jekyll" property="og:title">
+    <meta content="http://localhost:4000/about/" property="article:author"><meta content="Firebase Uploading dSYM Manually" property="og:title">
     <meta content="article" property="og:type">
     <meta content="http://localhost:4000/posts/Introduction-to-simply-jekyll" property="og:url"><title> iOS Development</title>
 
@@ -123,30 +123,56 @@
         </div>
         <p class="back-p">Home</p>
     </div></header><main>
-                <h1>Introduction to Simply Jekyll</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#01-May-2020" class="tag">May-01-2020</a></li>
-    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#jekyll" class="tag">jekyll</a></li><li><a href="/tags/#theme" class="tag">theme</a></li></ul><div class="content"><p>Simply Jekyll is a highly functional jekyll-based theme that combines the best of different worlds (atleast tries to 😅). It is a minimal and distraction free theme that strives to provide maximum value all without holding back on any essential features that a user would benefit from or would desire for. This is an evolving project and is garanteed to be maintained at least for quite some time as I myself am a beneficiary of this theme and the project.</p>
+                <h1>Firebase Uploading dSYM Manually</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#01-May-2020" class="tag">May-01-2020</a></li>
+    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Firebase" class="tag">Firebase</a></li><li><a href="/tags/#Crashlytics" class="tag">Crashlytics</a></li></ul><div class="content"><p>Get deobfuscated crash reports and upload it via Mac Terminal. I have this problem in my <strong>Production Scheme</strong> when someone user crashes their app and
+the dSYM's are not uploaded in our Firebase. It seems that it needs a bit of work to do in order to upload the dYSM's.
+Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.</p>
 
-<p>The theme provides a rich set of features that include:</p>
+<p>These are my mostly used <strong>BASH</strong> commands.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls
+ls -l
+cd *folder name
+cd ~
+cd ..
+</code></pre></div></div>
+
+<p>For the steps:</p>
 <ul>
-  <li>Wiki-style markdown syntax for both internal as well as external links.</li>
-  <li>Support for backlinks and related posts to exhort serendipitous encounters.</li>
-  <li>Feed-specific context menu for instantly accessing the related posts and references.</li>
-  <li>Auto stale-link management for internal links.</li>
-  <li>Custom syntax for sidenotes and marginnotes on either side of the feed/post.</li>
-  <li>Support for partial transclusion of posts.</li>
-  <li>On hover page preview.</li>
-  <li>Custom classes to style phrasing elements like quotes, callouts, etc by mentioning size, font-types, weight, box etc.</li>
-  <li>Preliminary support for flashcards.</li>
-  <li>Custom syntax to highlight your favorite part of the post (No, I am not talking about code syntax highlighting, which is already provided by Jekyll through Rouge).</li>
-  <li>Support for external link identifier through icons.</li>
-  <li>Finally, the most important of them all — No bloatware or frameworks!</li>
+  <li>First, navigate to Appstore Connect and choose your app</li>
+  <li>Go to Activity Tab &gt; Latest Version &gt; Include Symbol &gt; download dSYM</li>
+  <li>Put it on Desktop to easy reference</li>
+  <li>Go here <a href="https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios">https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios</a></li>
+  <li>Check <strong>Upload your dSYM Topic</strong></li>
 </ul>
 
-<p>Plus everything else that you can already do with jekyll like write something on a bunch of markdown files and convert it into a HTML file or sprinkle in some inline html can still be done alongside these features.</p>
+<p>These are the Placeholders
+dSYM_directory = the dSYM zip that you've downloaded in appstoreconnect
+$PODS_ROOT/FirebaseCrashlytics/upload-symbols = the firebase upload-symbols in the current project</p>
+<ul>
+  <li>You can get this by creating a script in Build Phases and add script "echo $PODS_ROOT/FirebaseCrashlytics/upload-symbols"</li>
+  <li>After building, navigate to Report Navigator in the left of xcode and click the first hammer icon. Scroll down at the bottom and you will find the current directory of $PODS_ROOT</li>
+  <li>/path/to/GoogleService-Info.plist = you can also get the path of this using the steps above
+platform = ios</li>
+</ul>
 
-<p>Neat stuff, isn't it? To see the above mentioned features in action go check out the next post. :P</p>
+<h5 id="note-login-in-firebase-cli-first-before-executing-this-script">NOTE: Login in firebase cli first before executing this script</h5>
 
-<p>Also see the sample post—<span class="tooltip"><a href="/posts/informational-hazard-thinking-before-consuming">(Sample Essay) Informational Hazard - Thinking Before Consuming</a><span class="right bottom"><span class="tooltip-title">(Sample Essay) Informational Hazard - Thinking Before Consuming</span><br/><span class="tooltip-excerpt">Information is probably the single most addictive substance, even more so than heroin in it can give you the kick even before you have consumed it, let alone waiting for the system to digest it. And what is more interesting is, the quality and the content(in chemist-speak, the composition, and the dosage) that is required to stimulate an individual varies for each individual. For some, the effect kicks in at “keeping up with Kardashians”; for some, when reading editorials in the economist or ...</span><i></i></span></span>—to get a feel for how an actual essay would look like. :)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># BASH
+firebase login
+firebase projects:list # To check the projects, for verification
+</code></pre></div></div>
+
+<p>First Script:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find dSYM_directory -name "*.dSYM" | xargs -I \{\} $PODS_ROOT/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p platform \{\}
+</code></pre></div></div>
+
+<p>Second Script:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/path/to/pods/directory/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p ios /path/to/dSYMs
+</code></pre></div></div>
+
+<p>I used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.</p>
 
 </div><!-- Add backlinks to the current page --></main><div id="copyright">
     <p id="copyright-notice">© nitrogen17</p>

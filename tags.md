@@ -1,6 +1,6 @@
 ---
 layout: post
-title: By Tags
+title: 
 permalink: /tags/
 content-type: eg
 ---
@@ -20,7 +20,7 @@ content-type: eg
 <main>
     {% for tag in site.tags %}
         <h3 id="{{ tag | first }}">{{ tag | first | capitalize }}</h3>
-        {% for post in tag.last %} 
+        {% for post in tag.last %}
             <li id="category-content" style="padding-bottom: 0.6em; list-style: none;"><a href="{{post.url}}">{{ post.title }}</a></li>
         {% endfor %}
     {% endfor %}

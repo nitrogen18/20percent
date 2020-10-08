@@ -1,27 +1,55 @@
 ---
-title: Introduction to Simply Jekyll
-tags: jekyll theme
+title: Firebase Uploading dSYM Manually
+tags: Firebase Crashlytics
 comments: false
 ---
 
-Simply Jekyll is a highly functional jekyll-based theme that combines the best of different worlds (atleast tries to 😅). It is a minimal and distraction free theme that strives to provide maximum value all without holding back on any essential features that a user would benefit from or would desire for. This is an evolving project and is garanteed to be maintained at least for quite some time as I myself am a beneficiary of this theme and the project.
+Get deobfuscated crash reports and upload it via Mac Terminal. I have this problem in my **Production Scheme** when someone user crashes their app and
+the dSYM's are not uploaded in our Firebase. It seems that it needs a bit of work to do in order to upload the dYSM's.
+Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.
 
-The theme provides a rich set of features that include:
-- Wiki-style markdown syntax for both internal as well as external links.
-- Support for backlinks and related posts to exhort serendipitous encounters.
-- Feed-specific context menu for instantly accessing the related posts and references.
-- Auto stale-link management for internal links.
-- Custom syntax for sidenotes and marginnotes on either side of the feed/post.
-- Support for partial transclusion of posts.
-- On hover page preview.
-- Custom classes to style phrasing elements like quotes, callouts, etc by mentioning size, font-types, weight, box etc.
-- Preliminary support for flashcards.
-- Custom syntax to highlight your favorite part of the post (No, I am not talking about code syntax highlighting, which is already provided by Jekyll through Rouge).
-- Support for external link identifier through icons.
-- Finally, the most important of them all --- No bloatware or frameworks!
+These are my mostly used **BASH** commands.
+```
+ls
+ls -l
+cd *folder name
+cd ~
+cd ..
+```
 
-Plus everything else that you can already do with jekyll like write something on a bunch of markdown files and convert it into a HTML file or sprinkle in some inline html can still be done alongside these features.
+For the steps:
+- First, navigate to Appstore Connect and choose your app
+- Go to Activity Tab > Latest Version > Include Symbol > download dSYM
+- Put it on Desktop to easy reference
+- Go here [https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios](https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios)
+- Check **Upload your dSYM Topic**
 
-Neat stuff, isn't it? To see the above mentioned features in action go check out the next post. :P
+These are the Placeholders
+dSYM_directory = the dSYM zip that you've downloaded in appstoreconnect
+$PODS_ROOT/FirebaseCrashlytics/upload-symbols = the firebase upload-symbols in the current project
+- You can get this by creating a script in Build Phases and add script "echo $PODS_ROOT/FirebaseCrashlytics/upload-symbols"
+- After building, navigate to Report Navigator in the left of xcode and click the first hammer icon. Scroll down at the bottom and you will find the current directory of $PODS_ROOT
+- /path/to/GoogleService-Info.plist = you can also get the path of this using the steps above
+platform = ios
 
-Also see the sample post---[[(Sample Essay) Informational Hazard - Thinking Before Consuming]]---to get a feel for how an actual essay would look like. :)
+##### NOTE: Login in firebase cli first before executing this script
+
+```
+# BASH
+firebase login
+firebase projects:list # To check the projects, for verification
+```
+
+First Script:
+
+```
+find dSYM_directory -name "*.dSYM" | xargs -I \{\} $PODS_ROOT/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p platform \{\}
+```
+
+Second Script:
+
+```
+/path/to/pods/directory/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p ios /path/to/dSYMs
+```
+
+I used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.
