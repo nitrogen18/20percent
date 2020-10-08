@@ -2,8 +2,16 @@
   
     {
 
+      "title"    : "Bring iPhone Simulator in Front",
+      "url"      : "/posts/Bring-iPhone-Simulator-in-Front",
+      "content"  : "When I do some build and run in Xcode, sometimes the Simulator stuck at the back of IDE, and it needs to be click manually in order to show. In this script, it will bring the simulator in front every time you build and run your project. Very convenient for Simulator Users. 😉\n\nSteps: Xcode &gt; Project &gt; Build Phases &gt; Targets &gt; New Run"
+
+    },
+  
+    {
+
       "title"    : "Firebase Uploading dSYM Manually",
-      "url"      : "/posts/Introduction-to-simply-jekyll",
+      "url"      : "/posts/Firebase-Uploading-dSYM-Manually",
       "content"  : "Get deobfuscated crash reports and upload it via Mac Terminal. I have this problem in my Production Scheme when someone user crashes their app and\nthe dSYM's are not uploaded in our Firebase. It seems that it needs a bit of work to do in order to upload the dYSM's.\nBased on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.\n\nThese are my mostly used BASH commands.\nls\nls -l\ncd *folder name\ncd ~\ncd ..\n\n\nFor the steps:\n\n  First, navigate to Appstore Connect and choose your app\n  Go to Activity Tab &gt; Latest Version &gt; Include Symbol &gt; download dSYM\n  Put it on Desktop to easy reference\n  Go here https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios\n  Check Upload your dSYM Topic\n\n\nThese are the Placeholders\ndSYM_directory = the dSYM zip that you've downloaded in appstoreconnect\n$PODS_ROOT/FirebaseCrashlytics/upload-symbols = the firebase upload-symbols in the current project\n\n  You can get this by creating a script in Build Phases and add script \"echo $PODS_ROOT/FirebaseCrashlytics/upload-symbols\"\n  After building, navigate to Report Navigator in the left of xcode and click the first hammer icon. Scroll down at the bottom and you will find the current directory of $PODS_ROOT\n  /path/to/GoogleService-Info.plist = you can also get the path of this using the steps above\nplatform = ios\n\n\nNOTE: Login in firebase cli first before executing this script\n\n# BASH\nfirebase login\nfirebase projects:list # To check the projects, for verification\n\n\nFirst Script:\n\nfind dSYM_directory -name \"*.dSYM\" | xargs -I \\{\\} $PODS_ROOT/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p platform \\{\\}\n\n\nSecond Script:\n\n/path/to/pods/directory/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p ios /path/to/dSYMs\n\n\nI used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not."
 
     },
