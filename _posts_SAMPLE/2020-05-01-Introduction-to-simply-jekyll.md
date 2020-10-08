@@ -1,7 +1,6 @@
 ---
 title: Introduction to Simply Jekyll
 tags: jekyll theme
-comments: false
 ---
 
 Simply Jekyll is a highly functional jekyll-based theme that combines the best of different worlds (atleast tries to 😅). It is a minimal and distraction free theme that strives to provide maximum value all without holding back on any essential features that a user would benefit from or would desire for. This is an evolving project and is garanteed to be maintained at least for quite some time as I myself am a beneficiary of this theme and the project.
@@ -25,3 +24,5 @@ Plus everything else that you can already do with jekyll like write something on
 Neat stuff, isn't it? To see the above mentioned features in action go check out the next post. :P
 
 Also see the sample post---[[(Sample Essay) Informational Hazard - Thinking Before Consuming]]---to get a feel for how an actual essay would look like. :)
+
+

@@ -25,8 +25,9 @@ Colons can be used to align columns.
 | Ateneo Programming Challenge (APC) 2018 | 5th      |
 | ACM ICPC Philippine National Programming Contest 2017 | 7th      |
 | Ateneo Programming Challenge (APC) 2017 | 7th      |
-| Ateneo Programming Challenge (APC) 2015 | 8th      |
 | ACM ICPC Philippine National Programming Contest 2017 | Top Team from Luzon      |
+| Ateneo Programming Challenge (APC) 2015 | 8th      |
+
 
 
 Organizations
