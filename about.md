@@ -20,10 +20,23 @@ Colons can be used to align columns.
 | Ateneo Competitive Programming League Tryouts (ACPL)     | 2nd |
 | CS Week: Battle of the Brains, Team FrostByte | 2nd      |
 | LoveBytes: A Gender Equal Programming Contest | 3rd      |
-| ACM ICPC Philippines Southern Luzon | 5th      |
+| Ateneo Programming Challenge (APC) 2016 | 4th      |
+| ACM ICPC Philippines Southern Luzon 2018 | 5th      |
 | Ateneo Programming Challenge (APC) 2018 | 5th      |
 | ACM ICPC Philippine National Programming Contest 2017 | 7th      |
 | Ateneo Programming Challenge (APC) 2017 | 7th      |
+| Ateneo Programming Challenge (APC) 2015 | 8th      |
+| ACM ICPC Philippine National Programming Contest 2017 | Top Team from Luzon      |
+
+
+Organizations
+
+| Organization        | Information           |
+| ------------- |:-------------:|
+| ACM (Association for Computing Machinery) - Student Membership      | Given by ICPC Council for qualifying in ACM ICPC Asia-Manila (Asia Pacific Regional) Programming Contest 2017 |
+| ACPL (Ateneo de Naga Competitive Programming League) Programming Varsity      | https://www.adnu.edu.ph/ai/2018/03/09/acpl-tryouts-results/      |
+| TACTICS Body of Internal Tactical Support - Academics Committee | https://pbs.twimg.com/media/CHx7NsSUMAAeV5l.jpg      |
+
 
 
 ---
