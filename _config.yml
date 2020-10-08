@@ -1,12 +1,12 @@
-title: iOS Development
-name: Nitrogen
+title:  iOS Development
+name: Nitrogen 
 user_description: Former ACM ICPC 2017 Asia-Manila Competitive Programmer
-notes_url: "https://simply-jekyll.netlify.app"
+notes_url: "https://github.com/nitrogen17"
 profile_pic: /assets/img/profile-icon.jpg
 favicon: /assets/img/favicon.png
 copyright_name: nitrogen17
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://github.com/nitrogen17" # the base hostname & protocol for your site, e.g. http://example.com
+url: "www.nitrodev.ga" # the base hostname & protocol for your site, e.g. http://example.com
 encoding: utf-8
 
 # Build settings
