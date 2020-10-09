@@ -4,7 +4,7 @@ tags: Firebase Crashlytics
 comments: false
 ---
 
-Get deobfuscated crash reports and upload it via Mac Terminal. I have this problem in my **Production Scheme** when someone user crashes their app and
+I have this problem in my **Production Scheme** when someone user crashes their app and
 the dSYM's are not uploaded in our Firebase. It seems that it needs a bit of work to do in order to upload the dYSM's.
 Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.
 
@@ -53,3 +53,7 @@ Second Script:
 ```
 
 I used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.
+
+<br>
+<br>
+<br>

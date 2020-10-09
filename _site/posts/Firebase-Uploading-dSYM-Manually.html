@@ -6,13 +6,13 @@
     <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
     <meta content="http://localhost:4000/about/" property="article:author"><meta content="Firebase Uploading dSYM Manually" property="og:title">
     <meta content="article" property="og:type">
-    <meta content="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually" property="og:url"><title> iOS Development</title>
+    <meta content="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually" property="og:url"><title>Nitrogen Blog</title>
 
     <link rel="canonical" href="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually"/>
     <link rel="apple-touch-icon" href="/assets/img/profile-icon.jpg">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 
-    <link rel="icon" href="/assets/img/favicon.png" type="image/png" sizes="16x16"/>
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/png" sizes="16x16"/>
     <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
 
     <!--[if IE]>
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <div class="container">                    
+    <div class="container">
         <div class = "box"><header>
     <div class="dashboard disable-select">
         <div class="site-heading profile-board-col">
@@ -124,7 +124,7 @@
         <p class="back-p">Home</p>
     </div></header><main>
                 <h1>Firebase Uploading dSYM Manually</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#01-May-2020" class="tag">May-01-2020</a></li>
-    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Firebase" class="tag">Firebase</a></li><li><a href="/tags/#Crashlytics" class="tag">Crashlytics</a></li></ul><div class="content"><p>Get deobfuscated crash reports and upload it via Mac Terminal. I have this problem in my <strong>Production Scheme</strong> when someone user crashes their app and
+    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Firebase" class="tag">Firebase</a></li><li><a href="/tags/#Crashlytics" class="tag">Crashlytics</a></li></ul><div class="content"><p>I have this problem in my <strong>Production Scheme</strong> when someone user crashes their app and
 the dSYM's are not uploaded in our Firebase. It seems that it needs a bit of work to do in order to upload the dYSM's.
 Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.</p>
 
@@ -173,6 +173,10 @@ firebase projects:list # To check the projects, for verification
 </code></pre></div></div>
 
 <p>I used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.</p>
+
+<p><br />
+<br />
+<br /></p>
 
 </div><!-- Add backlinks to the current page --></main><div id="copyright">
     <p id="copyright-notice">© nitrogen17</p>

@@ -1,10 +1,11 @@
 title:  iOS Development
+title-web: Nitrogen Blog
 name: Nitrogen 
 user_description: Former ACM ICPC 2017 Asia-Manila Competitive Programmer
 user_description_1: Programmer | (Interested in Clean Code) 🌱
 notes_url: "https://github.com/nitrogen17"
 profile_pic: /assets/img/profile-icon.jpg
-favicon: /assets/img/favicon.png
+favicon: /assets/img/favicon.ico
 copyright_name: nitrogen17
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "www.nitrodev.ga" # the base hostname & protocol for your site, e.g. http://example.com
