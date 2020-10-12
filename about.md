@@ -5,7 +5,7 @@ permalink: /about/
 content-type: eg
 ---
 
-### WIP
+### This Page is Under Construction 🔨
 
 | Competition        | Rankings          |
 | ------------- |:-------------:|

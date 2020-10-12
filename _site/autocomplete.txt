@@ -1,1 +1,1 @@
-Bring iPhone Simulator in Front;Firebase Uploading dSYM Manually;Title;
+Add Telegram Notification on Bitrise;Bring iPhone Simulator in Front;Firebase Uploading dSYM Manually;Title;
