@@ -55,5 +55,10 @@ Second Script:
 I used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.
 
 <br>
+PS: It works! when we manual upload dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce error alert anymore and the future errors it will process by the Firebase/Crashlytics.
+![alt text](/assets/img/dsym-error.png)
+
+Better to have a script when we archive the project. It must automatically upload the dSYM into Crashlytics. Possible solutions would be putting a script in Xcode after the building of Production Builld or automates it via CI/CD Bitrise.
+<br>
 <br>
 <br>

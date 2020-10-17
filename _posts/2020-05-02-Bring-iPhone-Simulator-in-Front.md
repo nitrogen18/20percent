@@ -10,6 +10,11 @@ Steps: **Xcode > Project > Build Phases > Targets > New Run**
 
 ![alt text](/assets/img/bring-to-front.jpg "Logo Title Text 1")
 
-<br>
+```
+tell application "iPhone Simulator"
+activate
+end tell
+```
+
 <br>
 <br>
