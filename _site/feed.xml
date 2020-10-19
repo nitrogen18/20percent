@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-17T11:13:08+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> iOS Dev Notes</title><entry><title type="html">Add Telegram Notification on Bitrise</title><link href="http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise" rel="alternate" type="text/html" title="Add Telegram Notification on Bitrise" /><published>2020-05-03T00:00:00+08:00</published><updated>2020-05-03T00:00:00+08:00</updated><id>http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise</id><content type="html" xml:base="http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise">&lt;p&gt;If you're using Bitrise and you always use Telegram, this workflow step will help you a lot by sending Bitrise Status build to your Telegram Account. Think about a trigger when you push to specific branch and do a Bitrise task on it. You need to check again to Bitrise Web in order to see the result of that task.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-19T20:20:44+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> iOS Dev Notes</title><entry><title type="html">Unit/UI Test Everyday Scheduler on Bitrise</title><link href="http://localhost:4000/posts/unit-ui-test-on-bitrise" rel="alternate" type="text/html" title="Unit/UI Test Everyday Scheduler on Bitrise" /><published>2020-05-04T00:00:00+08:00</published><updated>2020-05-04T00:00:00+08:00</updated><id>http://localhost:4000/posts/unit-ui-test-on-bitrise</id><content type="html" xml:base="http://localhost:4000/posts/unit-ui-test-on-bitrise">&lt;p&gt;This is intended as blank.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WIP&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="Bitrise" /><summary type="html">This is intended as blank.</summary></entry><entry><title type="html">Add Telegram Notification on Bitrise</title><link href="http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise" rel="alternate" type="text/html" title="Add Telegram Notification on Bitrise" /><published>2020-05-03T00:00:00+08:00</published><updated>2020-05-03T00:00:00+08:00</updated><id>http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise</id><content type="html" xml:base="http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise">&lt;p&gt;If you're using Bitrise and you always use Telegram, this workflow step will help you a lot by sending Bitrise Status build to your Telegram Account. Think about a trigger when you push to specific branch and do a Bitrise task on it. You need to check again to Bitrise Web in order to see the result of that task.&lt;/p&gt;
 
 &lt;p&gt;This step adds a flavor in your Bitrise Workflow, and better to put it at the end of all of your steps. It will send notification to your Telegram after finishing the Bitrise Task.&lt;/p&gt;
 
@@ -7,8 +9,6 @@
   &lt;li&gt;push to develop branch&lt;/li&gt;
   &lt;li&gt;Sit down or do some other task and wait for your phone to notify the build from Bitrise.&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/list-workflow.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -31,8 +31,34 @@ $TELEGRAM_CHAT_ID (SENSITIVE)
 $DOWNLOAD_URL
 $CUSTOM_MESSAGE
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;ENV Details:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;TELEGRAM_BOT_TOKEN - Your Bot Token.
 
-&lt;p&gt;&lt;strong&gt;WIP&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="Bitrise" /><summary type="html">If you're using Bitrise and you always use Telegram, this workflow step will help you a lot by sending Bitrise Status build to your Telegram Account. Think about a trigger when you push to specific branch and do a Bitrise task on it. You need to check again to Bitrise Web in order to see the result of that task.</summary></entry><entry><title type="html">Bring iPhone Simulator in Front</title><link href="http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front" rel="alternate" type="text/html" title="Bring iPhone Simulator in Front" /><published>2020-05-02T00:00:00+08:00</published><updated>2020-05-02T00:00:00+08:00</updated><id>http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front</id><content type="html" xml:base="http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front">&lt;p&gt;When I do some &lt;em&gt;build and run&lt;/em&gt; via Xcode, sometimes the &lt;strong&gt;Simulator&lt;/strong&gt; stuck at the back of IDE and it needs to be click manually in order to show. In this script, it will bring the simulator in front every time you build and run your project. &lt;strong&gt;Very convenient&lt;/strong&gt; for Simulator Users. 😉&lt;/p&gt;
+TELEGRAM_CHAT_ID - Your Telegram Account Chat ID.
+
+DOWNLOAD_URL - Environment if you want to Download your archive.
+
+CUSTOM_MESSAGE - Depending on what you want to show in telegram bot.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;After that, search for &lt;strong&gt;BotFather&lt;/strong&gt; in Telegram search bar.&lt;/li&gt;
+  &lt;li&gt;For &lt;strong&gt;$TELEGRAM_BOT_TOKEN&lt;/strong&gt; , you can follow my convo with him.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/godfather-convo.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For &lt;strong&gt;$TELEGRAM_CHAT_ID&lt;/strong&gt; , search for &lt;strong&gt;@get_id_bot&lt;/strong&gt; in Telegram search bar.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/start
+/my_id
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/assets/img/telegram-get-id.png&quot; width=&quot;380&quot; /&gt;
+&lt;/p&gt;</content><author><name></name></author><category term="Bitrise" /><summary type="html">If you're using Bitrise and you always use Telegram, this workflow step will help you a lot by sending Bitrise Status build to your Telegram Account. Think about a trigger when you push to specific branch and do a Bitrise task on it. You need to check again to Bitrise Web in order to see the result of that task.</summary></entry><entry><title type="html">Bring iPhone Simulator in Front</title><link href="http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front" rel="alternate" type="text/html" title="Bring iPhone Simulator in Front" /><published>2020-05-02T00:00:00+08:00</published><updated>2020-05-02T00:00:00+08:00</updated><id>http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front</id><content type="html" xml:base="http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front">&lt;p&gt;When I do some &lt;em&gt;build and run&lt;/em&gt; via Xcode, sometimes the &lt;strong&gt;Simulator&lt;/strong&gt; stuck at the back of IDE and it needs to be click manually in order to show. In this script, it will bring the simulator in front every time you build and run your project. &lt;strong&gt;Very convenient&lt;/strong&gt; for Simulator Users. 😉&lt;/p&gt;
 
 &lt;p&gt;Steps: &lt;strong&gt;Xcode &amp;gt; Project &amp;gt; Build Phases &amp;gt; Targets &amp;gt; New Run&lt;/strong&gt;&lt;/p&gt;
 
@@ -95,10 +121,10 @@ firebase projects:list # To check the projects, for verification
 &lt;p&gt;I used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
-PS: It works! when we manual upload dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce error alert anymore and the future errors it will process by the Firebase/Crashlytics.
+PS: It works!. If we manually upload the dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce error alert anymore and the future errors it will process by the Firebase/Crashlytics.
 &lt;img src=&quot;/assets/img/dsym-error.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Better to have a script when we archive the project. It must automatically upload the dSYM into Crashlytics. Possible solutions would be putting a script in Xcode after the building of Production Builld or automates it via CI/CD Bitrise.
+&lt;p&gt;Better to have a script when we archive the project. It must automatically upload the dSYM into Crashlytics. Possible solutions would be putting a script in Xcode after the building of Production Builld or automate it via CI/CD Bitrise.
 &lt;br /&gt;
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Firebase" /><category term="Crashlytics" /><summary type="html">I have this problem in my Production Scheme when someone user crashes their app and the dSYM's are not uploaded in our Firebase. It seems that it needs a bit of work to do in order to upload the dYSM's. Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.</summary></entry></feed>

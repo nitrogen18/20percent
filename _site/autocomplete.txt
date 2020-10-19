@@ -1,1 +1,1 @@
-Add Telegram Notification on Bitrise;Bring iPhone Simulator in Front;Firebase Uploading dSYM Manually;Title;
+Unit/UI Test Everyday Scheduler on Bitrise;Add Telegram Notification on Bitrise;Bring iPhone Simulator in Front;Firebase Uploading dSYM Manually;Title;

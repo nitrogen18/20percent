@@ -12,8 +12,6 @@ This step adds a flavor in your Bitrise Workflow, and better to put it at the en
 - push to develop branch
 - Sit down or do some other task and wait for your phone to notify the build from Bitrise.
 
-![alt text](/assets/img/list-workflow.png)
-
 **Steps:**
 - Choose any of your workflow to put the Telegram Notification to be included at the end of it.
 
@@ -32,5 +30,28 @@ $TELEGRAM_CHAT_ID (SENSITIVE)
 $DOWNLOAD_URL
 $CUSTOM_MESSAGE
 ```
+**ENV Details:**
+```
+TELEGRAM_BOT_TOKEN - Your Bot Token.
 
-**WIP**
+TELEGRAM_CHAT_ID - Your Telegram Account Chat ID.
+
+DOWNLOAD_URL - Environment if you want to Download your archive.
+
+CUSTOM_MESSAGE - Depending on what you want to show in telegram bot.
+```
+
+- After that, search for **BotFather** in Telegram search bar.
+- For **$TELEGRAM_BOT_TOKEN** , you can follow my convo with him.
+
+![alt text](/assets/img/godfather-convo.png)
+
+- For **$TELEGRAM_CHAT_ID** , search for **@get_id_bot** in Telegram search bar.
+```
+/start
+/my_id
+```
+
+<p align="center">
+<img src="/assets/img/telegram-get-id.png" width="380" >
+</p>
