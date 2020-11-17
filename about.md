@@ -9,9 +9,8 @@ content-type: eg
 
 | Competition        | Rankings          |
 | ------------- |:-------------:|
-| Ateneo Computer Programming Competition (ACPC)      | 2nd      |
+| Ateneo Computer Programming Competition (ACPC) - *Highest Rank Achieved, Received Silver Medal and SM Gift Voucher     | 2nd      |
 | Ateneo Competitive Programming League Tryouts (ACPL)     | 2nd |
-| CS Week: Battle of the Brains, Team FrostByte | 2nd      |
 | LoveBytes: A Gender Equal Programming Contest | 3rd      |
 | Ateneo Programming Challenge (APC) 2016 | 4th      |
 | ACM ICPC Philippines Southern Luzon 2018 | 5th      |

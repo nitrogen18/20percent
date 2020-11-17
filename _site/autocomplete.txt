@@ -1,1 +1,1 @@
-Unit/UI Test Everyday Scheduler on Bitrise;Add Telegram Notification on Bitrise;Bring iPhone Simulator in Front;Firebase Uploading dSYM Manually;Title;
+Pod Install via No Internet;Update Realm Studio to Latest Version;First Impression to Software Architectural Pattern;Stuck at Unit Test via MVC;Firebase Uploading dSYM Manually;Bring iPhone Simulator in Front;Add Telegram Notification on Bitrise;Attack of titan   chapter 133: sinners;Delayed Gratification;Title;

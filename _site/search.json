@@ -2,9 +2,49 @@
   
     {
 
-      "title"    : "Unit/UI Test Everyday Scheduler on Bitrise",
+      "title"    : "Pod Install via No Internet",
+      "url"      : "/posts/pod-install-via-no-internet",
+      "content"  : "What will happen if we pod install without an internet?. By adding parameter --verbose we can check on what happens inside the pod command. In verbose log, pod checks the pod cache library first if the pod library exists; If not, then it will search the pod library on the internet.\n\nSteps:\n\n\n  Add --verbose to pod update\n  Look for pod cache library path and change on its directory bash command: cd *path\n\n\n\n\n\n\n\n  Print the availabe folders via ls\n\n\n\n\n\n  These are the pod library cache available for offline use. This pod cache exist because of our past pod install in other project.\n\n\nNote: If we have a lot of pod written in our Podfile and one of its pod didn't exist in our pod cache library. Then it will force to fetch via Internet, making the pod install fail."
+
+    },
+  
+    {
+
+      "title"    : "Update Realm Studio to Latest Version",
+      "url"      : "/posts/update-realm-studio-to-latest-version",
+      "content"  : "If you encounter this error, it seems that you have outdated Realm Studio like me. Maybe you download it somewhere specially from outdated guides via Internet. Similar case which I get a very low version Version 3.10.0. Prior to latest version of Realm Studio today, it jumps to Version 10.0.1 which is very far from my Version that I have.\n\nThis guide will help you to check or put the latest Realm Studio in your Mac.\n\n\nNote: My Realm Studio before, Version 3.10.0\n\nSteps:\n\n\n  Uninstall existing Realm Studio in your Mac. Simply navigate to Apple Icon &gt; About this Mac &gt; Storage &gt; Manage &gt; Applications &gt; *And look for Realm Studio\n  Click Delete. *If nothing happens, restart the Mac and do the first step first after booting.\n  Navigate to this Link: https://github.com/realmswift and go to Release Section. You will see there the different version of Realm Studio.\n  After choosing the desire version, just click the link and look for .dmg file.\n  Download it and install, Done!\n\n\n\nNote: My Realm Studio after, Version 10.0.1"
+
+    },
+  
+    {
+
+      "title"    : "First Impression to Software Architectural Pattern",
+      "url"      : "/posts/first-impression-to-mvvm-architecture",
+      "content"  : "This is I coded way back year 2017,\n\nSee? it can be called as a God File since all business logic were here. Coded from one file that exceeds 1k lines as student will feel a sense of pride, but in reality, It's just a trap way back before that I actually created a 🔥Massive View Controller. Think about looking a bug that coded for a years. To be able to point out where to change or needed to adjust, we need to scroll from top to bottom with 2k+ line of codes looking for affected parts and its dependency. *Oh sh^t are you serious?!\n\nthis is one of disadvantage of not knowing about Software Architectural Pattern.\n\nThen why does Separation of Concern stands out? What are the benefits of implement this kind of chuchu? For first Impression, i'm sure\nour mind project that its too complicated when hearing about this, but in reality its just a concept that recreated for more than a year that shipped not just one language, but others as well, that are capable to integrate it in order to achieve segregation of concern, getting the files who does the business logic and do a Unit test there, and other stuffs.\n\nIn the end, for me, learning the MVC Pattern is a must specially in School because they will realize later on the Architectural Pattern if they decided to jump on it.\n\nWIP"
+
+    },
+  
+    {
+
+      "title"    : "Stuck at Unit Test via MVC",
       "url"      : "/posts/unit-ui-test-on-bitrise",
-      "content"  : "This is intended as blank.\n\nWIP"
+      "content"  : "Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel there's somethings wrong, so I look up and explore\nabout it. Looking back of what i'm pointing, I tried to do Unit Test since theres something benefits of creating\nthis test, it makes the code more reliable and bug free since we can do click Unit Test after doing some changes in codebase.\nBut then I have this struggle on how do I unit test my Modules which are UIViewControllers. I can't test them since some of my\nfunction and logics were tightly coupled. It means that in one function there were two or more business logic.\n\nUnit Test via testable import need a return function in order to test it but since my functions were already coupled, I need to\ndecompose/breaks them into a smaller pieces which I have my own trust issues. I feel there something strange bug will pop out\nelsewhere since I will move some of the business logic from my codebase. So what I did is UI Test, its an actual test on a simulator of physical device, It's somehow resembles in Selenium which automates the action on simulator. We can just click record and do some clicks on simulator, then XCode will provide the action code. That's the one of alternative of testing my codebase since I have this trust\nissues on breaking them down into smaller pieces/functions.\n\nMeanwhile, while reading some stuffs on the internet. I found this article which gave me chills lol? XD anyway I\nmean I relate of what he said.\n\nSo what’s wrong with the code above? In the PhotoListViewController, we can find the presentational logic such as converting Date to String and when to start/stop the activity indicator. We also have the View code such as the implementation of showing/hiding the table view. In addition, there’s another dependency, the API service, in the view controller. If you plan to write tests for the PhotoListViewController, you will find that you’re stuck since it’s too complicated. We have to mock the APIService, mock the table view and mock the cell to test the whole PhotoListViewController. Phew!\n\n\nIn his case, he had this PhotoListViewController with a lot of business logic like converting date, start/stop activity indicator,\nshowing/hiding table view, also with a dependency API Service. He points out its too complicated since there were different kind of\npresentation logic in one file which resembles in my case(MVC), thats why the MVC is also called as Massive View Controller.\n\nBased on my readings there were good solution for this; is to implement a Software Architecture Pattern that implements Presentation/Domain Layer which all business process will be put in here. There are some of Software Architecture Pattern that implements it, the MVP and MVVC are widely know for this that has the Separation of Concern to other layer which gives benefit to implement an extensive Unit Test for every Data/UI component. Hoping to implement one of this in the near future."
+
+    },
+  
+    {
+
+      "title"    : "Firebase Uploading dSYM Manually",
+      "url"      : "/posts/Firebase-Uploading-dSYM-Manually",
+      "content"  : "I have this problem in my Production Scheme when someone user crashes their app and\nthe dSYM's were not uploaded in our Firebase. It seems that it needs a lot of work to do in order to upload the dYSM's.\nBased on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.\n\nThese are my mostly used BASH commands.\nls\nls -l\ncd *folder name\ncd ~\ncd ..\n\n\nFor the steps:\n\n  First, navigate to Appstore Connect and choose your app\n  Go to Activity Tab &gt; Latest Version &gt; Include Symbol &gt; download dSYM\n  Put it on Desktop for easy reference\n  Go here https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios\n  Check Upload your dSYM Topic\n\n\nThese are the Placeholders\ndSYM_directory = the dSYM zip that you've downloaded in appstoreconnect\n$PODS_ROOT/FirebaseCrashlytics/upload-symbols = the firebase upload-symbols in the current project\n\n  You can get this by creating a script in Build Phases and add script \"echo $PODS_ROOT/FirebaseCrashlytics/upload-symbols\"\n  After building, navigate to Report Navigator in the left of xcode and click the first hammer icon. Scroll down at the bottom and you will find the current directory of $PODS_ROOT\n  /path/to/GoogleService-Info.plist = you can also get the path of this using the steps above\nplatform = ios\n\n\nNOTE: Login in firebase cli first before executing this script\n\n# BASH\nfirebase login\nfirebase projects:list # To check the projects, for verification\n\n\nFirst Script:\n\nfind dSYM_directory -name \"*.dSYM\" | xargs -I \\{\\} $PODS_ROOT/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p platform \\{\\}\n\n\nSecond Script:\n\n/path/to/pods/directory/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p ios /path/to/dSYMs\n\n\n\n\nI used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.\n\n\nPS: It works! If we manually upload the dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce error alert anymore and the future errors it will be preceded and process by the Firebase/Crashlytics.\n\n\nBetter to have a script when we archive the project that automatically uploads the dSYM into Crashlytics. Possible solutions would be putting a script in Xcode after building the Production, or automate it via CI/CD Bitrise."
+
+    },
+  
+    {
+
+      "title"    : "Bring iPhone Simulator in Front",
+      "url"      : "/posts/Bring-iPhone-Simulator-in-Front",
+      "content"  : "When I do some build and run via Xcode, sometimes the Simulator stuck at the back of IDE and it needs to be click manually in order to show. In this script, it will bring the simulator in front every time we build and run our project. Very convenient for Simulator Users like me. 😉\n\nSteps: Xcode &gt; Project &gt; Build Phases &gt; Targets &gt; New Run\n\n\n\ntell application \"iPhone Simulator\"\nactivate\nend tell"
 
     },
   
@@ -16,23 +56,23 @@
 
     },
   
+
+  
     {
 
-      "title"    : "Bring iPhone Simulator in Front",
-      "url"      : "/posts/Bring-iPhone-Simulator-in-Front",
-      "content"  : "When I do some build and run via Xcode, sometimes the Simulator stuck at the back of IDE and it needs to be click manually in order to show. In this script, it will bring the simulator in front every time you build and run your project. Very convenient for Simulator Users. 😉\n\nSteps: Xcode &gt; Project &gt; Build Phases &gt; Targets &gt; New Run\n\n\n\ntell application \"iPhone Simulator\"\nactivate\nend tell"
+      "title"    : "Attack of titan   chapter 133: sinners",
+      "url"      : "/notes/Attack-of-Titan-Chapter-133-Sinners",
+      "content"  : "My one and only Manga that I've following for years. In this Chapter,  “I gave you a freedom to stop me, I have my freedom to move forward.”.In his statement, he gave the freedom to the 9 Titan Shifters to do their decisions if they will stop him *EREN or to follow him to flatten the Earth. For me, he's being fair with other 9 shifters even he activates his Coordinate Tita via Zeke, The Coordinate is the POWERFUL TITAN that can control all titans even the 9"
 
     },
   
     {
 
-      "title"    : "Firebase Uploading dSYM Manually",
-      "url"      : "/posts/Firebase-Uploading-dSYM-Manually",
-      "content"  : "I have this problem in my Production Scheme when someone user crashes their app and\nthe dSYM's are not uploaded in our Firebase. It seems that it needs a bit of work to do in order to upload the dYSM's.\nBased on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.\n\nThese are my mostly used BASH commands.\nls\nls -l\ncd *folder name\ncd ~\ncd ..\n\n\nFor the steps:\n\n  First, navigate to Appstore Connect and choose your app\n  Go to Activity Tab &gt; Latest Version &gt; Include Symbol &gt; download dSYM\n  Put it on Desktop to easy reference\n  Go here https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios\n  Check Upload your dSYM Topic\n\n\nThese are the Placeholders\ndSYM_directory = the dSYM zip that you've downloaded in appstoreconnect\n$PODS_ROOT/FirebaseCrashlytics/upload-symbols = the firebase upload-symbols in the current project\n\n  You can get this by creating a script in Build Phases and add script \"echo $PODS_ROOT/FirebaseCrashlytics/upload-symbols\"\n  After building, navigate to Report Navigator in the left of xcode and click the first hammer icon. Scroll down at the bottom and you will find the current directory of $PODS_ROOT\n  /path/to/GoogleService-Info.plist = you can also get the path of this using the steps above\nplatform = ios\n\n\nNOTE: Login in firebase cli first before executing this script\n\n# BASH\nfirebase login\nfirebase projects:list # To check the projects, for verification\n\n\nFirst Script:\n\nfind dSYM_directory -name \"*.dSYM\" | xargs -I \\{\\} $PODS_ROOT/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p platform \\{\\}\n\n\nSecond Script:\n\n/path/to/pods/directory/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p ios /path/to/dSYMs\n\n\nI used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.\n\n\nPS: It works!. If we manually upload the dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce error alert anymore and the future errors it will process by the Firebase/Crashlytics.\n\n\nBetter to have a script when we archive the project. It must automatically upload the dSYM into Crashlytics. Possible solutions would be putting a script in Xcode after the building of Production Builld or automate it via CI/CD Bitrise."
+      "title"    : "Delayed Gratification",
+      "url"      : "/notes/Delayed-Gratification",
+      "content"  : "Delayed Gratification  “QUOTE”.Delayed Gratificationhttps://www.psychologytoday.com/us/blog/your-emotional-meter/201712/the-benefits-delaying-gratificationhttps://www.verywellmind.com/delayed-gratification-why-wait-for-what-you-want-2795429Notable Items that my batchmates bought already were;  Gaming PC          Keychome        High End Laptop specially Acer PREDATOR  MacBook Air, Pro  PS5  and lasty Latest iPhones"
 
     },
-  
-
   
     {
 

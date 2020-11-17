@@ -34,7 +34,7 @@
                 <p class="title-sans"><a href="/about" style="text-decoration: none;">Nitrogen </a></p>
             </div>
             <div class="userdesc">
-                <p class="title-sans" style="font-size: 13px;">Developer<br>Reading dev stuffs everyday</p>
+                <p class="title-sans" style="font-size: 13px;">Developer<br>Reading dev stuffs everyday 📚</p>
             </div>
             <div class="link-to-notes">
                 <svg height="16" width="15" viewBox="0 0 24 24" class="anchor-link">
@@ -123,9 +123,9 @@
         </div>
         <p class="back-p">Home</p>
     </div></header><main>
-                <h1>Firebase Uploading dSYM Manually</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#01-May-2020" class="tag">May-01-2020</a></li>
-    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Firebase" class="tag">Firebase</a></li><li><a href="/tags/#Crashlytics" class="tag">Crashlytics</a></li></ul><div class="content"><p>I have this problem in my <strong>Production Scheme</strong> when someone user crashes their app and
-the dSYM's are not uploaded in our Firebase. It seems that it needs a bit of work to do in order to upload the dYSM's.
+                <h1>Firebase Uploading dSYM Manually</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#03-May-2020" class="tag">May-03-2020</a></li>
+    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Crashlytics" class="tag">Crashlytics</a></li></ul><div class="content"><p>I have this problem in my <strong>Production Scheme</strong> when someone user crashes their app and
+the dSYM's were not uploaded in our Firebase. It seems that it needs a lot of work to do in order to upload the dYSM's.
 Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.</p>
 
 <p>These are my mostly used <strong>BASH</strong> commands.</p>
@@ -140,7 +140,7 @@ cd ..
 <ul>
   <li>First, navigate to Appstore Connect and choose your app</li>
   <li>Go to Activity Tab &gt; Latest Version &gt; Include Symbol &gt; download dSYM</li>
-  <li>Put it on Desktop to easy reference</li>
+  <li>Put it on Desktop for easy reference</li>
   <li>Go here <a href="https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios">https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios</a></li>
   <li>Check <strong>Upload your dSYM Topic</strong></li>
 </ul>
@@ -172,13 +172,15 @@ firebase projects:list # To check the projects, for verification
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/path/to/pods/directory/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p ios /path/to/dSYMs
 </code></pre></div></div>
 
+<p><img src="/assets/img/crashlytics-upload.png" alt="alt text" /></p>
+
 <p>I used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.</p>
 
 <p><br />
-PS: It works!. If we manually upload the dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce error alert anymore and the future errors it will process by the Firebase/Crashlytics.
+PS: It works! If we manually upload the dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce error alert anymore and the future errors it will be preceded and process by the Firebase/Crashlytics.
 <img src="/assets/img/dsym-error.png" alt="alt text" /></p>
 
-<p>Better to have a script when we archive the project. It must automatically upload the dSYM into Crashlytics. Possible solutions would be putting a script in Xcode after the building of Production Builld or automate it via CI/CD Bitrise.
+<p>Better to have a script when we archive the project that automatically uploads the dSYM into Crashlytics. Possible solutions would be putting a script in Xcode after building the Production, or automate it via CI/CD Bitrise.
 <br />
 <br />
 <br /></p>

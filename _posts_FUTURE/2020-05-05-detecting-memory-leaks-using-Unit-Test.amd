@@ -1,0 +1,22 @@
+---
+title: Detecting Memory Leak in iOS App using Unit test
+tags: Architecture
+comments: true
+---
+
+https://medium.com/flawless-app-stories/memory-leaks-in-swift-bfd5f95f3a74
+
+Retail Lifecycle
+
+Memory Leaks
+Indeed, it’s one of the most frequent problems we face as developers. We code feature after feature and as the app grows, we introduce leaks.
+
+```
+Memory that was allocated at some point, but was never released and is no longer referenced by your app. Since there are no references to it, there’s now no way to release it and the memory can’t be used again.
+```
+
+We all create leaks at some point, from junior to senior devs. It doesn’t matter how experienced we are. It is paramount to eliminate them to have a clean, crash-free application. Why? Because they are dangerous.
+
+Result
+
+Leaks will undoubtedly lead to a bad UX and poor ratings in the App Store.

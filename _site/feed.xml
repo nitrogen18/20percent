@@ -1,6 +1,158 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-19T20:20:44+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> iOS Dev Notes</title><entry><title type="html">Unit/UI Test Everyday Scheduler on Bitrise</title><link href="http://localhost:4000/posts/unit-ui-test-on-bitrise" rel="alternate" type="text/html" title="Unit/UI Test Everyday Scheduler on Bitrise" /><published>2020-05-04T00:00:00+08:00</published><updated>2020-05-04T00:00:00+08:00</updated><id>http://localhost:4000/posts/unit-ui-test-on-bitrise</id><content type="html" xml:base="http://localhost:4000/posts/unit-ui-test-on-bitrise">&lt;p&gt;This is intended as blank.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-17T21:59:40+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> iOS Dev Notes</title><entry><title type="html">Pod Install via No Internet</title><link href="http://localhost:4000/posts/pod-install-via-no-internet" rel="alternate" type="text/html" title="Pod Install via No Internet" /><published>2020-05-07T00:00:00+08:00</published><updated>2020-05-07T00:00:00+08:00</updated><id>http://localhost:4000/posts/pod-install-via-no-internet</id><content type="html" xml:base="http://localhost:4000/posts/pod-install-via-no-internet">&lt;p&gt;What will happen if we &lt;code class=&quot;highlighter-rouge&quot;&gt;pod install&lt;/code&gt; without an internet?. By adding parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;--verbose&lt;/code&gt; we can check on what happens inside the pod command. In verbose log, pod checks the pod cache library first if the pod library exists; If not, then it will search the pod library on the internet.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;WIP&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="Bitrise" /><summary type="html">This is intended as blank.</summary></entry><entry><title type="html">Add Telegram Notification on Bitrise</title><link href="http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise" rel="alternate" type="text/html" title="Add Telegram Notification on Bitrise" /><published>2020-05-03T00:00:00+08:00</published><updated>2020-05-03T00:00:00+08:00</updated><id>http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise</id><content type="html" xml:base="http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise">&lt;p&gt;If you're using Bitrise and you always use Telegram, this workflow step will help you a lot by sending Bitrise Status build to your Telegram Account. Think about a trigger when you push to specific branch and do a Bitrise task on it. You need to check again to Bitrise Web in order to see the result of that task.&lt;/p&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;--verbose&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;pod update&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Look for pod cache library path and change on its directory &lt;code class=&quot;highlighter-rouge&quot;&gt;bash command: cd *path&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/podinstall/podinstall.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/podinstall/podinstall-part2.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Print the availabe folders via &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/podinstall/pod-cache.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;These are the pod library cache available for offline use. This pod cache exist because of our past &lt;code class=&quot;highlighter-rouge&quot;&gt;pod install&lt;/code&gt; in other project.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note: If we have a lot of pod written in our Podfile and one of its pod didn't exist in our pod cache library. Then it will force to fetch via Internet, making the &lt;code class=&quot;highlighter-rouge&quot;&gt;pod install&lt;/code&gt; fail.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Cocoapod" /><summary type="html">What will happen if we pod install without an internet?. By adding parameter --verbose we can check on what happens inside the pod command. In verbose log, pod checks the pod cache library first if the pod library exists; If not, then it will search the pod library on the internet.</summary></entry><entry><title type="html">Update Realm Studio to Latest Version</title><link href="http://localhost:4000/posts/update-realm-studio-to-latest-version" rel="alternate" type="text/html" title="Update Realm Studio to Latest Version" /><published>2020-05-06T00:00:00+08:00</published><updated>2020-05-06T00:00:00+08:00</updated><id>http://localhost:4000/posts/update-realm-studio-to-latest-version</id><content type="html" xml:base="http://localhost:4000/posts/update-realm-studio-to-latest-version">&lt;p&gt;&lt;img src=&quot;/assets/img/unsupported-realm-version/unsupported-realm.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you encounter this error, it seems that you have outdated Realm Studio like me. Maybe you download it somewhere specially from outdated guides via Internet. Similar case which I get a very low version &lt;code class=&quot;highlighter-rouge&quot;&gt;Version 3.10.0&lt;/code&gt;. Prior to latest version of Realm Studio today, it jumps to &lt;code class=&quot;highlighter-rouge&quot;&gt;Version 10.0.1&lt;/code&gt; which is very far from my Version that I have.&lt;/p&gt;
+
+&lt;p&gt;This guide will help you to check or put the latest Realm Studio in your Mac.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unsupported-realm-version/realm-3.png&quot; alt=&quot;alt text&quot; /&gt;
+&lt;strong&gt;Note:&lt;/strong&gt; My Realm Studio before, &lt;code class=&quot;highlighter-rouge&quot;&gt;Version 3.10.0&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Uninstall existing Realm Studio in your Mac. Simply navigate to &lt;strong&gt;Apple Icon &amp;gt; About this Mac &amp;gt; Storage &amp;gt; Manage &amp;gt; Applications &amp;gt; *And look for Realm Studio&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Click Delete. *If nothing happens, restart the Mac and do the first step first after booting.&lt;/li&gt;
+  &lt;li&gt;Navigate to this Link: https://github.com/realmswift and go to Release Section. You will see there the different version of Realm Studio.&lt;/li&gt;
+  &lt;li&gt;After choosing the desire version, just click the link and look for &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; file.&lt;/li&gt;
+  &lt;li&gt;Download it and install, Done!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unsupported-realm-version/realm-10.png&quot; alt=&quot;alt text&quot; /&gt;
+&lt;strong&gt;Note:&lt;/strong&gt; My Realm Studio after, &lt;code class=&quot;highlighter-rouge&quot;&gt;Version 10.0.1&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Tools" /><summary type="html"></summary></entry><entry><title type="html">First Impression to Software Architectural Pattern</title><link href="http://localhost:4000/posts/first-impression-to-mvvm-architecture" rel="alternate" type="text/html" title="First Impression to Software Architectural Pattern" /><published>2020-05-05T00:00:00+08:00</published><updated>2020-05-05T00:00:00+08:00</updated><id>http://localhost:4000/posts/first-impression-to-mvvm-architecture</id><content type="html" xml:base="http://localhost:4000/posts/first-impression-to-mvvm-architecture">&lt;p&gt;This is I coded way back year 2017,&lt;/p&gt;
+
+&lt;p&gt;See? it can be called as a &lt;strong&gt;God File&lt;/strong&gt; since all business logic were here. Coded from one file that exceeds 1k lines as student will feel a &lt;strong&gt;sense of pride&lt;/strong&gt;, but in reality, It's just a trap way back before that I actually created a 🔥&lt;strong&gt;Massive View Controller&lt;/strong&gt;. Think about looking a bug that coded for a years. To be able to point out where to change or needed to adjust, we need to scroll from top to bottom with 2k+ line of codes looking for affected parts and its dependency. *Oh sh^t are you serious?!&lt;/p&gt;
+
+&lt;p&gt;this is one of disadvantage of not knowing about &lt;strong&gt;Software Architectural Pattern&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then why does Separation of Concern stands out? What are the benefits of implement this kind of chuchu? For first Impression, i'm sure
+our mind project that its too complicated when hearing about this, but in reality its just a concept that recreated for more than a year that shipped not just one language, but others as well, that are capable to integrate it in order to achieve segregation of concern, getting the files who does the business logic and do a Unit test there, and other stuffs.&lt;/p&gt;
+
+&lt;p&gt;In the end, for me, learning the MVC Pattern is a must specially in School because they will realize later on the Architectural Pattern if they decided to jump on it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WIP&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="Architecture" /><summary type="html">This is I coded way back year 2017,</summary></entry><entry><title type="html">Stuck at Unit Test via MVC</title><link href="http://localhost:4000/posts/unit-ui-test-on-bitrise" rel="alternate" type="text/html" title="Stuck at Unit Test via MVC" /><published>2020-05-04T00:00:00+08:00</published><updated>2020-05-04T00:00:00+08:00</updated><id>http://localhost:4000/posts/unit-ui-test-on-bitrise</id><content type="html" xml:base="http://localhost:4000/posts/unit-ui-test-on-bitrise">&lt;p&gt;Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel there's somethings wrong, so I look up and explore
+about it. Looking back of what i'm pointing, I tried to do Unit Test since theres something benefits of creating
+this test, it makes the code more reliable and bug free since we can do click Unit Test after doing some changes in codebase.
+But then I have this struggle on how do I unit test my Modules which are UIViewControllers. I can't test them since some of my
+function and logics were tightly coupled. It means that in one function there were two or more business logic.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Unit Test&lt;/strong&gt; via testable import need a return function in order to test it but since my functions were already coupled, I need to
+decompose/breaks them into a smaller pieces which I have my own trust issues. I feel there something strange bug will pop out
+elsewhere since I will move some of the business logic from my codebase. So what I did is &lt;strong&gt;UI Test&lt;/strong&gt;, its an actual test on a simulator of physical device, It's somehow resembles in Selenium which automates the action on simulator. We can just click record and do some clicks on simulator, then XCode will provide the action code. That's the one of alternative of testing my codebase since I have this trust
+issues on breaking them down into smaller pieces/functions.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, while reading some stuffs on the internet. I found this article which gave me chills lol? XD anyway I
+mean I relate of what he said.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;So what’s wrong with the code above? In the PhotoListViewController, we can find the presentational logic such as converting Date to String and when to start/stop the activity indicator. We also have the View code such as the implementation of showing/hiding the table view. In addition, there’s another dependency, the API service, in the view controller. If you plan to write tests for the PhotoListViewController, you will find that you’re stuck since it’s too complicated. We have to mock the APIService, mock the table view and mock the cell to test the whole PhotoListViewController. Phew!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In his case, he had this PhotoListViewController with a lot of business logic like converting date, start/stop activity indicator,
+showing/hiding table view, also with a dependency API Service. He points out its too complicated since there were different kind of
+presentation logic in one file which resembles in my case(MVC), thats why the MVC is also called as &lt;strong&gt;Massive View Controller&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Based on my readings there were good solution for this; is to implement a Software Architecture Pattern that implements &lt;strong&gt;Presentation/Domain Layer&lt;/strong&gt; which all business process will be put in here. There are some of Software Architecture Pattern that implements it, the &lt;strong&gt;MVP&lt;/strong&gt; and &lt;strong&gt;MVVC&lt;/strong&gt; are widely know for this that has the &lt;strong&gt;Separation of Concern&lt;/strong&gt; to other layer which gives benefit to implement an extensive &lt;strong&gt;Unit Test&lt;/strong&gt; for every Data/UI component. Hoping to implement one of this in the near future.&lt;/p&gt;</content><author><name></name></author><category term="Architecture" /><summary type="html">Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel there's somethings wrong, so I look up and explore about it. Looking back of what i'm pointing, I tried to do Unit Test since theres something benefits of creating this test, it makes the code more reliable and bug free since we can do click Unit Test after doing some changes in codebase. But then I have this struggle on how do I unit test my Modules which are UIViewControllers. I can't test them since some of my function and logics were tightly coupled. It means that in one function there were two or more business logic.</summary></entry><entry><title type="html">Firebase Uploading dSYM Manually</title><link href="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually" rel="alternate" type="text/html" title="Firebase Uploading dSYM Manually" /><published>2020-05-03T00:00:00+08:00</published><updated>2020-05-03T00:00:00+08:00</updated><id>http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually</id><content type="html" xml:base="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually">&lt;p&gt;I have this problem in my &lt;strong&gt;Production Scheme&lt;/strong&gt; when someone user crashes their app and
+the dSYM's were not uploaded in our Firebase. It seems that it needs a lot of work to do in order to upload the dYSM's.
+Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.&lt;/p&gt;
+
+&lt;p&gt;These are my mostly used &lt;strong&gt;BASH&lt;/strong&gt; commands.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ls
+ls -l
+cd *folder name
+cd ~
+cd ..
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For the steps:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;First, navigate to Appstore Connect and choose your app&lt;/li&gt;
+  &lt;li&gt;Go to Activity Tab &amp;gt; Latest Version &amp;gt; Include Symbol &amp;gt; download dSYM&lt;/li&gt;
+  &lt;li&gt;Put it on Desktop for easy reference&lt;/li&gt;
+  &lt;li&gt;Go here &lt;a href=&quot;https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios&quot;&gt;https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Check &lt;strong&gt;Upload your dSYM Topic&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are the Placeholders
+dSYM_directory = the dSYM zip that you've downloaded in appstoreconnect
+$PODS_ROOT/FirebaseCrashlytics/upload-symbols = the firebase upload-symbols in the current project&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;You can get this by creating a script in Build Phases and add script &quot;echo $PODS_ROOT/FirebaseCrashlytics/upload-symbols&quot;&lt;/li&gt;
+  &lt;li&gt;After building, navigate to Report Navigator in the left of xcode and click the first hammer icon. Scroll down at the bottom and you will find the current directory of $PODS_ROOT&lt;/li&gt;
+  &lt;li&gt;/path/to/GoogleService-Info.plist = you can also get the path of this using the steps above
+platform = ios&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;note-login-in-firebase-cli-first-before-executing-this-script&quot;&gt;NOTE: Login in firebase cli first before executing this script&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# BASH
+firebase login
+firebase projects:list # To check the projects, for verification
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;First Script:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;find dSYM_directory -name &quot;*.dSYM&quot; | xargs -I \{\} $PODS_ROOT/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p platform \{\}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Second Script:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/path/to/pods/directory/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p ios /path/to/dSYMs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/crashlytics-upload.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+PS: It works! If we manually upload the dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce error alert anymore and the future errors it will be preceded and process by the Firebase/Crashlytics.
+&lt;img src=&quot;/assets/img/dsym-error.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Better to have a script when we archive the project that automatically uploads the dSYM into Crashlytics. Possible solutions would be putting a script in Xcode after building the Production, or automate it via CI/CD Bitrise.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Crashlytics" /><summary type="html">I have this problem in my Production Scheme when someone user crashes their app and the dSYM's were not uploaded in our Firebase. It seems that it needs a lot of work to do in order to upload the dYSM's. Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.</summary></entry><entry><title type="html">Bring iPhone Simulator in Front</title><link href="http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front" rel="alternate" type="text/html" title="Bring iPhone Simulator in Front" /><published>2020-05-02T00:00:00+08:00</published><updated>2020-05-02T00:00:00+08:00</updated><id>http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front</id><content type="html" xml:base="http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front">&lt;p&gt;When I do some &lt;em&gt;build and run&lt;/em&gt; via Xcode, sometimes the &lt;strong&gt;Simulator&lt;/strong&gt; stuck at the back of IDE and it needs to be click manually in order to show. In this script, it will bring the simulator in front every time we build and run our project. Very convenient for Simulator Users like me. 😉&lt;/p&gt;
+
+&lt;p&gt;Steps: &lt;strong&gt;Xcode &amp;gt; Project &amp;gt; Build Phases &amp;gt; Targets &amp;gt; New Run&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/bring-to-front.jpg&quot; alt=&quot;alt text&quot; title=&quot;Logo Title Text 1&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tell application &quot;iPhone Simulator&quot;
+activate
+end tell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Simulator" /><summary type="html">When I do some build and run via Xcode, sometimes the Simulator stuck at the back of IDE and it needs to be click manually in order to show. In this script, it will bring the simulator in front every time we build and run our project. Very convenient for Simulator Users like me. 😉</summary></entry><entry><title type="html">Add Telegram Notification on Bitrise</title><link href="http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise" rel="alternate" type="text/html" title="Add Telegram Notification on Bitrise" /><published>2020-05-01T00:00:00+08:00</published><updated>2020-05-01T00:00:00+08:00</updated><id>http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise</id><content type="html" xml:base="http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise">&lt;p&gt;If you're using Bitrise and you always use Telegram, this workflow step will help you a lot by sending Bitrise Status build to your Telegram Account. Think about a trigger when you push to specific branch and do a Bitrise task on it. You need to check again to Bitrise Web in order to see the result of that task.&lt;/p&gt;
 
 &lt;p&gt;This step adds a flavor in your Bitrise Workflow, and better to put it at the end of all of your steps. It will send notification to your Telegram after finishing the Bitrise Task.&lt;/p&gt;
 
@@ -58,73 +210,4 @@ CUSTOM_MESSAGE - Depending on what you want to show in telegram bot.
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/img/telegram-get-id.png&quot; width=&quot;380&quot; /&gt;
-&lt;/p&gt;</content><author><name></name></author><category term="Bitrise" /><summary type="html">If you're using Bitrise and you always use Telegram, this workflow step will help you a lot by sending Bitrise Status build to your Telegram Account. Think about a trigger when you push to specific branch and do a Bitrise task on it. You need to check again to Bitrise Web in order to see the result of that task.</summary></entry><entry><title type="html">Bring iPhone Simulator in Front</title><link href="http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front" rel="alternate" type="text/html" title="Bring iPhone Simulator in Front" /><published>2020-05-02T00:00:00+08:00</published><updated>2020-05-02T00:00:00+08:00</updated><id>http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front</id><content type="html" xml:base="http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front">&lt;p&gt;When I do some &lt;em&gt;build and run&lt;/em&gt; via Xcode, sometimes the &lt;strong&gt;Simulator&lt;/strong&gt; stuck at the back of IDE and it needs to be click manually in order to show. In this script, it will bring the simulator in front every time you build and run your project. &lt;strong&gt;Very convenient&lt;/strong&gt; for Simulator Users. 😉&lt;/p&gt;
-
-&lt;p&gt;Steps: &lt;strong&gt;Xcode &amp;gt; Project &amp;gt; Build Phases &amp;gt; Targets &amp;gt; New Run&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/bring-to-front.jpg&quot; alt=&quot;alt text&quot; title=&quot;Logo Title Text 1&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tell application &quot;iPhone Simulator&quot;
-activate
-end tell
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Simulator" /><summary type="html">When I do some build and run via Xcode, sometimes the Simulator stuck at the back of IDE and it needs to be click manually in order to show. In this script, it will bring the simulator in front every time you build and run your project. Very convenient for Simulator Users. 😉</summary></entry><entry><title type="html">Firebase Uploading dSYM Manually</title><link href="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually" rel="alternate" type="text/html" title="Firebase Uploading dSYM Manually" /><published>2020-05-01T00:00:00+08:00</published><updated>2020-05-01T00:00:00+08:00</updated><id>http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually</id><content type="html" xml:base="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually">&lt;p&gt;I have this problem in my &lt;strong&gt;Production Scheme&lt;/strong&gt; when someone user crashes their app and
-the dSYM's are not uploaded in our Firebase. It seems that it needs a bit of work to do in order to upload the dYSM's.
-Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.&lt;/p&gt;
-
-&lt;p&gt;These are my mostly used &lt;strong&gt;BASH&lt;/strong&gt; commands.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ls
-ls -l
-cd *folder name
-cd ~
-cd ..
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;For the steps:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;First, navigate to Appstore Connect and choose your app&lt;/li&gt;
-  &lt;li&gt;Go to Activity Tab &amp;gt; Latest Version &amp;gt; Include Symbol &amp;gt; download dSYM&lt;/li&gt;
-  &lt;li&gt;Put it on Desktop to easy reference&lt;/li&gt;
-  &lt;li&gt;Go here &lt;a href=&quot;https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios&quot;&gt;https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=ios&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Check &lt;strong&gt;Upload your dSYM Topic&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;These are the Placeholders
-dSYM_directory = the dSYM zip that you've downloaded in appstoreconnect
-$PODS_ROOT/FirebaseCrashlytics/upload-symbols = the firebase upload-symbols in the current project&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;You can get this by creating a script in Build Phases and add script &quot;echo $PODS_ROOT/FirebaseCrashlytics/upload-symbols&quot;&lt;/li&gt;
-  &lt;li&gt;After building, navigate to Report Navigator in the left of xcode and click the first hammer icon. Scroll down at the bottom and you will find the current directory of $PODS_ROOT&lt;/li&gt;
-  &lt;li&gt;/path/to/GoogleService-Info.plist = you can also get the path of this using the steps above
-platform = ios&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;note-login-in-firebase-cli-first-before-executing-this-script&quot;&gt;NOTE: Login in firebase cli first before executing this script&lt;/h5&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# BASH
-firebase login
-firebase projects:list # To check the projects, for verification
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;First Script:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;find dSYM_directory -name &quot;*.dSYM&quot; | xargs -I \{\} $PODS_ROOT/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p platform \{\}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Second Script:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/path/to/pods/directory/FirebaseCrashlytics/upload-symbols -gsp /path/to/GoogleService-Info.plist -p ios /path/to/dSYMs
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-PS: It works!. If we manually upload the dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce error alert anymore and the future errors it will process by the Firebase/Crashlytics.
-&lt;img src=&quot;/assets/img/dsym-error.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Better to have a script when we archive the project. It must automatically upload the dSYM into Crashlytics. Possible solutions would be putting a script in Xcode after the building of Production Builld or automate it via CI/CD Bitrise.
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Firebase" /><category term="Crashlytics" /><summary type="html">I have this problem in my Production Scheme when someone user crashes their app and the dSYM's are not uploaded in our Firebase. It seems that it needs a bit of work to do in order to upload the dYSM's. Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.</summary></entry></feed>
+&lt;/p&gt;</content><author><name></name></author><category term="Bitrise" /><summary type="html">If you're using Bitrise and you always use Telegram, this workflow step will help you a lot by sending Bitrise Status build to your Telegram Account. Think about a trigger when you push to specific branch and do a Bitrise task on it. You need to check again to Bitrise Web in order to see the result of that task.</summary></entry></feed>

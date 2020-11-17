@@ -4,11 +4,11 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Knowledge Continuum" property="og:site_name"/>
     <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
-    <meta content="http://localhost:4000/about/" property="article:author"><meta content="Stuck at Unit Test via MVC" property="og:title">
+    <meta content="http://localhost:4000/about/" property="article:author"><meta content="First Impression to Software Architectural Pattern" property="og:title">
     <meta content="article" property="og:type">
-    <meta content="http://localhost:4000/posts/unit-ui-test-on-bitrise" property="og:url"><title>Nitrogen Blog</title>
+    <meta content="http://localhost:4000/posts/first-impression-to-mvvm-architecture" property="og:url"><title>Nitrogen Blog</title>
 
-    <link rel="canonical" href="http://localhost:4000/posts/unit-ui-test-on-bitrise"/>
+    <link rel="canonical" href="http://localhost:4000/posts/first-impression-to-mvvm-architecture"/>
     <link rel="apple-touch-icon" href="/assets/img/profile-icon.jpg">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 
@@ -123,37 +123,26 @@
         </div>
         <p class="back-p">Home</p>
     </div></header><main>
-                <h1>Stuck at Unit Test via MVC</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#04-May-2020" class="tag">May-04-2020</a></li>
-    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Architecture" class="tag">Architecture</a></li></ul><div class="content"><p>Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel there's somethings wrong, so I look up and explore
-about it. Looking back of what i'm pointing, I tried to do Unit Test since theres something benefits of creating
-this test, it makes the code more reliable and bug free since we can do click Unit Test after doing some changes in codebase.
-But then I have this struggle on how do I unit test my Modules which are UIViewControllers. I can't test them since some of my
-function and logics were tightly coupled. It means that in one function there were two or more business logic.</p>
+                <h1>First Impression to Software Architectural Pattern</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#05-May-2020" class="tag">May-05-2020</a></li>
+    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Architecture" class="tag">Architecture</a></li></ul><div class="content"><p>This is I coded way back year 2017,</p>
 
-<p><strong>Unit Test</strong> via testable import need a return function in order to test it but since my functions were already coupled, I need to
-decompose/breaks them into a smaller pieces which I have my own trust issues. I feel there something strange bug will pop out
-elsewhere since I will move some of the business logic from my codebase. So what I did is <strong>UI Test</strong>, its an actual test on a simulator of physical device, It's somehow resembles in Selenium which automates the action on simulator. We can just click record and do some clicks on simulator, then XCode will provide the action code. That's the one of alternative of testing my codebase since I have this trust
-issues on breaking them down into smaller pieces/functions.</p>
+<p>See? it can be called as a <strong>God File</strong> since all business logic were here. Coded from one file that exceeds 1k lines as student will feel a <strong>sense of pride</strong>, but in reality, It's just a trap way back before that I actually created a 🔥<strong>Massive View Controller</strong>. Think about looking a bug that coded for a years. To be able to point out where to change or needed to adjust, we need to scroll from top to bottom with 2k+ line of codes looking for affected parts and its dependency. *Oh sh^t are you serious?!</p>
 
-<p>Meanwhile, while reading some stuffs on the internet. I found this article which gave me chills lol? XD anyway I
-mean I relate of what he said.</p>
+<p>this is one of disadvantage of not knowing about <strong>Software Architectural Pattern</strong>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>So what’s wrong with the code above? In the PhotoListViewController, we can find the presentational logic such as converting Date to String and when to start/stop the activity indicator. We also have the View code such as the implementation of showing/hiding the table view. In addition, there’s another dependency, the API service, in the view controller. If you plan to write tests for the PhotoListViewController, you will find that you’re stuck since it’s too complicated. We have to mock the APIService, mock the table view and mock the cell to test the whole PhotoListViewController. Phew!
-</code></pre></div></div>
+<p>Then why does Separation of Concern stands out? What are the benefits of implement this kind of chuchu? For first Impression, i'm sure
+our mind project that its too complicated when hearing about this, but in reality its just a concept that recreated for more than a year that shipped not just one language, but others as well, that are capable to integrate it in order to achieve segregation of concern, getting the files who does the business logic and do a Unit test there, and other stuffs.</p>
 
-<p>In his case, he had this PhotoListViewController with a lot of business logic like converting date, start/stop activity indicator,
-showing/hiding table view, also with a dependency API Service. He points out its too complicated since there were different kind of
-presentation logic in one file which resembles in my case(MVC), thats why the MVC is also called as <strong>Massive View Controller</strong>.</p>
+<p>In the end, for me, learning the MVC Pattern is a must specially in School because they will realize later on the Architectural Pattern if they decided to jump on it.</p>
 
-<p>Based on my readings there were good solution for this; is to implement a Software Architecture Pattern that implements <strong>Presentation/Domain Layer</strong> which all business process will be put in here. There are some of Software Architecture Pattern that implements it, the <strong>MVP</strong> and <strong>MVVC</strong> are widely know for this that has the <strong>Separation of Concern</strong> to other layer which gives benefit to implement an extensive <strong>Unit Test</strong> for every Data/UI component. Hoping to implement one of this in the near future.</p>
+<p><strong>WIP</strong></p>
 
 </div><!-- Add backlinks to the current page --><div class="related" id="jekyll-seamless-relatedposts">
     <h4 class="medium-small">Related Posts</h4>
-    <div class="related-wrapper"><div class="related-group"><a href="/posts/first-impression-to-mvvm-architecture">
-            <p class="related-title">First Impression to Software Architectural Pattern</p>
-            <p class="related-excerpt">This is I coded way back year 2017,
-
-See? it can be called as a God File since all business logic were here. Coded from one file that exc...</p>
+    <div class="related-wrapper"><div class="related-group"><a href="/posts/unit-ui-test-on-bitrise">
+            <p class="related-title">Stuck at Unit Test via MVC</p>
+            <p class="related-excerpt">Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel there's somethings wrong, so I look up and explore
+about it. ...</p>
           </a></div></div>
       <br/>
     </div></main><!-- DISQUS COMMENT SECTION, DO NOT TOUCH -->
@@ -163,8 +152,8 @@ See? it can be called as a God File since all business logic were here. Coded fr
          *RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
          *LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         var disqus_config = function () {
-        this.page.url = 'http://localhost:4000/posts/unit-ui-test-on-bitrise';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://localhost:4000/posts/unit-ui-test-on-bitrise'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://localhost:4000/posts/first-impression-to-mvvm-architecture';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/posts/first-impression-to-mvvm-architecture'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
 
         (function() { // DON'T EDIT BELOW THIS LINE

@@ -1,0 +1,38 @@
+---
+title: Behavioral Design Pattern: The Mediator
+tags: Architecture
+comments: true
+---
+
+Mediator
+Defines simplified communication between classes
+
+
+First impressions were the Domain Layer which are
+
+**Presenter** of MVP and the **ViewModel** of MVVM Architecture.
+
+But one thing that I realized, is that all things that I do and code
+is world of Objects talking to each other.
+
+One proof is when creating a Cocoa Class, it indicates a Class.
+
+also a UIViewController, it declared as a
+
+class CartoonViewController: UIViewController {
+  ...
+}
+
+which indicates a creating a class and inorder to pass a data in this
+CartoonViewController Class, we will do a self.performSegue which is
+assigning a value from other UIViewController class
+
+class InfoController: UIViewController {
+  ...
+}
+
+It indicates that theres a Mediator between them.
+
+All Files where instantiate as a class UIViewController.
+
+The world of Objects.
