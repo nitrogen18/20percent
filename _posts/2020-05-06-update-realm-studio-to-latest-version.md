@@ -18,7 +18,11 @@ This guide will help you to check or put the latest Realm Studio in your Mac.
 
 1. Uninstall existing Realm Studio in your Mac. Simply navigate to **Apple Icon > About this Mac > Storage > Manage > Applications > *And look for Realm Studio**
 2. Click Delete. *If nothing happens, restart the Mac and do the first step first after booting.
-3. Navigate to this Link: https://github.com/realmswift and go to Release Section. You will see there the different version of Realm Studio.
+3. Navigate to this Link: [https://github.com/realm/realm-studio/releases](https://github.com/realm/realm-studio/releases) and go to Release Section. You will see there the different version of Realm Studio.
+
+![alt text](/assets/img/unsupported-realm-version/release-1.png)
+![alt text](/assets/img/unsupported-realm-version/release-2.png)
+
 4. After choosing the desire version, just click the link and look for ```.dmg``` file.
 5. Download it and install, Done!
 

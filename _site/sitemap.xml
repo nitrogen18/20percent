@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://localhost:4000/notes/Title</loc>
-<lastmod>2020-11-19T13:26:54+08:00</lastmod>
+<lastmod>2020-11-19T14:26:24+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise</loc>
@@ -19,10 +19,6 @@
 <url>
 <loc>http://localhost:4000/posts/unit-ui-test-on-bitrise</loc>
 <lastmod>2020-05-04T00:00:00+08:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/posts/first-impression-to-mvvm-architecture</loc>
-<lastmod>2020-05-05T00:00:00+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/posts/update-realm-studio-to-latest-version</loc>

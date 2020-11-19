@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-19T13:26:54+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> iOS Dev Notes</title><entry><title type="html">Pod Install via No Internet</title><link href="http://localhost:4000/posts/pod-install-via-no-internet" rel="alternate" type="text/html" title="Pod Install via No Internet" /><published>2020-05-07T00:00:00+08:00</published><updated>2020-05-07T00:00:00+08:00</updated><id>http://localhost:4000/posts/pod-install-via-no-internet</id><content type="html" xml:base="http://localhost:4000/posts/pod-install-via-no-internet">&lt;p&gt;What will happen if we &lt;code class=&quot;highlighter-rouge&quot;&gt;pod install&lt;/code&gt; without an internet?. By adding parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;--verbose&lt;/code&gt; we can check on what happens inside the pod command. In verbose log, pod checks the pod cache library first if the pod library exists; If not, then it will search the pod library on the internet.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-19T14:26:24+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> iOS Dev Notes</title><entry><title type="html">Pod Install via No Internet</title><link href="http://localhost:4000/posts/pod-install-via-no-internet" rel="alternate" type="text/html" title="Pod Install via No Internet" /><published>2020-05-07T00:00:00+08:00</published><updated>2020-05-07T00:00:00+08:00</updated><id>http://localhost:4000/posts/pod-install-via-no-internet</id><content type="html" xml:base="http://localhost:4000/posts/pod-install-via-no-internet">&lt;p&gt;What will happen if we &lt;code class=&quot;highlighter-rouge&quot;&gt;pod install&lt;/code&gt; without an internet?. By adding parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;--verbose&lt;/code&gt; we can check on what happens inside the pod command. In verbose log, pod checks the pod cache library first if the pod library exists; If not, then it will search the pod library on the internet.&lt;/p&gt;
 
 &lt;p&gt;Steps:&lt;/p&gt;
 
@@ -39,7 +39,13 @@
 &lt;ol&gt;
   &lt;li&gt;Uninstall existing Realm Studio in your Mac. Simply navigate to &lt;strong&gt;Apple Icon &amp;gt; About this Mac &amp;gt; Storage &amp;gt; Manage &amp;gt; Applications &amp;gt; *And look for Realm Studio&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;Click Delete. *If nothing happens, restart the Mac and do the first step first after booting.&lt;/li&gt;
-  &lt;li&gt;Navigate to this Link: https://github.com/realmswift and go to Release Section. You will see there the different version of Realm Studio.&lt;/li&gt;
+  &lt;li&gt;Navigate to this Link: &lt;a href=&quot;https://github.com/realm/realm-studio/releases&quot;&gt;https://github.com/realm/realm-studio/releases&lt;/a&gt; and go to Release Section. You will see there the different version of Realm Studio.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unsupported-realm-version/release-1.png&quot; alt=&quot;alt text&quot; /&gt;
+&lt;img src=&quot;/assets/img/unsupported-realm-version/release-2.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
   &lt;li&gt;After choosing the desire version, just click the link and look for &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; file.&lt;/li&gt;
   &lt;li&gt;Download it and install, Done!&lt;/li&gt;
 &lt;/ol&gt;
@@ -49,18 +55,7 @@
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Tools" /><summary type="html"></summary></entry><entry><title type="html">First Impression to Software Architectural Pattern</title><link href="http://localhost:4000/posts/first-impression-to-mvvm-architecture" rel="alternate" type="text/html" title="First Impression to Software Architectural Pattern" /><published>2020-05-05T00:00:00+08:00</published><updated>2020-05-05T00:00:00+08:00</updated><id>http://localhost:4000/posts/first-impression-to-mvvm-architecture</id><content type="html" xml:base="http://localhost:4000/posts/first-impression-to-mvvm-architecture">&lt;p&gt;This is I coded way back year 2017,&lt;/p&gt;
-
-&lt;p&gt;See? it can be called as a &lt;strong&gt;God File&lt;/strong&gt; since all business logic were here. Coded from one file that exceeds 1k lines as student will feel a &lt;strong&gt;sense of pride&lt;/strong&gt;, but in reality, It's just a trap way back before that I actually created a 🔥&lt;strong&gt;Massive View Controller&lt;/strong&gt;. Think about looking a bug that coded for a years. To be able to point out where to change or needed to adjust, we need to scroll from top to bottom with 2k+ line of codes looking for affected parts and its dependency. *Oh sh^t are you serious?!&lt;/p&gt;
-
-&lt;p&gt;this is one of disadvantage of not knowing about &lt;strong&gt;Software Architectural Pattern&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Then why does Separation of Concern stands out? What are the benefits of implement this kind of chuchu? For first Impression, i'm sure
-our mind project that its too complicated when hearing about this, but in reality its just a concept that recreated for more than a year that shipped not just one language, but others as well, that are capable to integrate it in order to achieve segregation of concern, getting the files who does the business logic and do a Unit test there, and other stuffs.&lt;/p&gt;
-
-&lt;p&gt;In the end, for me, learning the MVC Pattern is a must specially in School because they will realize later on the Architectural Pattern if they decided to jump on it.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;WIP&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="Architecture" /><summary type="html">This is I coded way back year 2017,</summary></entry><entry><title type="html">Stuck at Unit Test via MVC</title><link href="http://localhost:4000/posts/unit-ui-test-on-bitrise" rel="alternate" type="text/html" title="Stuck at Unit Test via MVC" /><published>2020-05-04T00:00:00+08:00</published><updated>2020-05-04T00:00:00+08:00</updated><id>http://localhost:4000/posts/unit-ui-test-on-bitrise</id><content type="html" xml:base="http://localhost:4000/posts/unit-ui-test-on-bitrise">&lt;p&gt;Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel there's somethings wrong, so I look up and explore
+&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Tools" /><summary type="html"></summary></entry><entry><title type="html">Stuck at Unit Test via MVC</title><link href="http://localhost:4000/posts/unit-ui-test-on-bitrise" rel="alternate" type="text/html" title="Stuck at Unit Test via MVC" /><published>2020-05-04T00:00:00+08:00</published><updated>2020-05-04T00:00:00+08:00</updated><id>http://localhost:4000/posts/unit-ui-test-on-bitrise</id><content type="html" xml:base="http://localhost:4000/posts/unit-ui-test-on-bitrise">&lt;p&gt;Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel there's somethings wrong, so I look up and explore
 about it. Looking back of what i'm pointing, I tried to do Unit Test since theres something benefits of creating
 this test, it makes the code more reliable and bug free since we can do click Unit Test after doing some changes in codebase.
 But then I have this struggle on how do I unit test my Modules which are UIViewControllers. I can't test them since some of my
