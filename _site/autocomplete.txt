@@ -1,1 +1,1 @@
-Pod Install via No Internet;Update Realm Studio to Latest Version;Stuck at Unit Test via MVC;Firebase Uploading dSYM Manually;Bring iPhone Simulator in Front;Add Telegram Notification on Bitrise;Title;
+Stuck at Unit Test via MVC;Pod Install via No Internet;Update Realm Studio to Latest Version;Firebase Uploading dSYM Manually;Bring iPhone Simulator in Front;Add Telegram Notification on Bitrise;Title;

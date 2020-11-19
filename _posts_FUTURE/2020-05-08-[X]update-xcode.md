@@ -1,5 +1,5 @@
 ---
-title: Update Xcode
+title: Updating Xcode
 tags: Tools
 comments: true
 ---

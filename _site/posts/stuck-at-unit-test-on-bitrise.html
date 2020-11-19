@@ -6,9 +6,9 @@
     <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
     <meta content="http://localhost:4000/about/" property="article:author"><meta content="Stuck at Unit Test via MVC" property="og:title">
     <meta content="article" property="og:type">
-    <meta content="http://localhost:4000/posts/unit-ui-test-on-bitrise" property="og:url"><title>Nitrogen Blog</title>
+    <meta content="http://localhost:4000/posts/stuck-at-unit-test-on-bitrise" property="og:url"><title>Nitrogen Blog</title>
 
-    <link rel="canonical" href="http://localhost:4000/posts/unit-ui-test-on-bitrise"/>
+    <link rel="canonical" href="http://localhost:4000/posts/stuck-at-unit-test-on-bitrise"/>
     <link rel="apple-touch-icon" href="/assets/img/profile-icon.jpg">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 
@@ -123,7 +123,7 @@
         </div>
         <p class="back-p">Home</p>
     </div></header><main>
-                <h1>Stuck at Unit Test via MVC</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#04-May-2020" class="tag">May-04-2020</a></li>
+                <h1>Stuck at Unit Test via MVC</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#08-May-2020" class="tag">May-08-2020</a></li>
     <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Architecture" class="tag">Architecture</a></li></ul><div class="content"><p>Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel there's somethings wrong, so I look up and explore
 about it. Looking back of what i'm pointing, I tried to do Unit Test since theres something benefits of creating
 this test, it makes the code more reliable and bug free since we can do click Unit Test after doing some changes in codebase.
@@ -135,17 +135,19 @@ decompose/breaks them into a smaller pieces which I have my own trust issues. I 
 elsewhere since I will move some of the business logic from my codebase. So what I did is <strong>UI Test</strong>, its an actual test on a simulator of physical device, It's somehow resembles in Selenium which automates the action on simulator. We can just click record and do some clicks on simulator, then XCode will provide the action code. That's the one of alternative of testing my codebase since I have this trust
 issues on breaking them down into smaller pieces/functions.</p>
 
-<p>Meanwhile, while reading some stuffs on the internet. I found this article which gave me chills lol? XD anyway I
-mean I relate of what he said.</p>
+<p>Meanwhile, while reading some stuffs on the internet. I found this feedback which I relate of what he said.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>So what’s wrong with the code above? In the PhotoListViewController, we can find the presentational logic such as converting Date to String and when to start/stop the activity indicator. We also have the View code such as the implementation of showing/hiding the table view. In addition, there’s another dependency, the API service, in the view controller. If you plan to write tests for the PhotoListViewController, you will find that you’re stuck since it’s too complicated. We have to mock the APIService, mock the table view and mock the cell to test the whole PhotoListViewController. Phew!
-</code></pre></div></div>
+<p><img src="/assets/img/someone.png" alt="alt text" /></p>
 
 <p>In his case, he had this PhotoListViewController with a lot of business logic like converting date, start/stop activity indicator,
 showing/hiding table view, also with a dependency API Service. He points out its too complicated since there were different kind of
 presentation logic in one file which resembles in my case(MVC), thats why the MVC is also called as <strong>Massive View Controller</strong>.</p>
 
-<p>Based on my readings there were good solution for this; is to implement a Software Architecture Pattern that implements <strong>Presentation/Domain Layer</strong> which all business process will be put in here. There are some of Software Architecture Pattern that implements it, the <strong>MVP</strong> and <strong>MVVC</strong> are widely know for this that has the <strong>Separation of Concern</strong> to other layer which gives benefit to implement an extensive <strong>Unit Test</strong> for every Data/UI component. Hoping to implement one of this in the near future.</p>
+<p>Based on my readings there were good solution for this; is to implement a Software Architecture Pattern that implements <strong>Presentation/Domain Layer</strong> which all business process will be put in here. There are some of Software Architecture Pattern that implements it, the <strong>MVP</strong> and <strong>MVVC</strong> are widely know for this that has the <strong>Separation of Concern</strong> to other layer which gives benefit to implement an extensive <strong>Unit Test</strong> for every Data/UI component.</p>
+
+<p><br />
+<br />
+<br /></p>
 
 </div><!-- Add backlinks to the current page --></main><!-- DISQUS COMMENT SECTION, DO NOT TOUCH -->
 <div id="disqus_thread"></div>
@@ -154,8 +156,8 @@ presentation logic in one file which resembles in my case(MVC), thats why the MV
          *RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
          *LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         var disqus_config = function () {
-        this.page.url = 'http://localhost:4000/posts/unit-ui-test-on-bitrise';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://localhost:4000/posts/unit-ui-test-on-bitrise'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://localhost:4000/posts/stuck-at-unit-test-on-bitrise';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/posts/stuck-at-unit-test-on-bitrise'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
 
         (function() { // DON'T EDIT BELOW THIS LINE
