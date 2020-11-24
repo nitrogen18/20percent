@@ -43,6 +43,9 @@ content-type: eg
 
 ![alt text](/assets/img/acm-asia.jpg "Logo Title Text 1")
 
+![alt text](/assets/img/acm/img026.jpg)
+
+
 [https://sites.google.com/view/asia-manila-pnpc2017/results](https://sites.google.com/view/asia-manila-pnpc2017/results)
 
 **Top team from Luzon (outside top 3) : Unexpected** (Ateneo de Naga University, solved 3/13, time = 449)
@@ -54,7 +57,6 @@ content-type: eg
 ![alt text](/assets/img/acm-asia-manila-cert.png "Logo Title Text 1")
 
 ![alt text](/assets/img/all-leaderboard.png "Logo Title Text 1")
-
 
 
 
