@@ -106,3 +106,38 @@ Other Details:
 
 {:.boxit}
 > The design of the website is inspired by multiple sources with the intention of making the website more functional. Having said that, I am not a skilled front-end developer/UI-developer, so I could only come somewhat closer to my inital design that I sketched *(see left or click on this &#8853; icon beside the question above if you are on a mobile device)*, hopefully this will clear why it's structured the way it is. In fact, I had to remove the lab option because of my current inability to design it. That said, I can also safely say that I am improving based on the initial iterations of the website that can be seen here: [[Jan-22-2020::https://web.archive.org/web/20200122164405/raghuveer.net]], [[Apr-13-2020::https://web.archive.org/web/20200413193808/raghuveer.net]], [[Apr-20-2020::https://web.archive.org/web/20200420172058/raghuveer.net]]
+
+
+
+### ACM ICPC Philippine Programming Certificates
+![alt text](/assets/img/acm/img017.jpg)
+![alt text](/assets/img/acm/img018.jpg)
+![alt text](/assets/img/acm/img019.jpg)
+![alt text](/assets/img/acm/img020.jpg)
+
+## APC and ACPC Programming Certificates
+
+![alt text](/assets/img/acm/img004.jpg)
+![alt text](/assets/img/acm/img005.jpg)
+![alt text](/assets/img/acm/img006.jpg)
+![alt text](/assets/img/acm/img007.jpg)
+![alt text](/assets/img/acm/img008.jpg)
+![alt text](/assets/img/acm/img009.jpg)
+![alt text](/assets/img/acm/img010.jpg)
+![alt text](/assets/img/acm/img011.jpg)
+![alt text](/assets/img/acm/img013.jpg)
+![alt text](/assets/img/acm/img014.jpg)
+![alt text](/assets/img/acm/img015.jpg)
+![alt text](/assets/img/acm/img016.jpg)
+
+## Miscellaneous
+![alt text](/assets/img/acm/img021.jpg)
+![alt text](/assets/img/acm/img025.jpg)
+
+## Graduation Award - Achievement Awardee
+![alt text](/assets/img/acm/img022.jpg)
+
+## Memorabilia from joining Competitive Programming
+![alt text](/assets/img/acm/img026.jpg)
+![alt text](/assets/img/acm/img028.jpg)
+![alt text](/assets/img/acm/img029.jpg)

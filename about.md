@@ -55,38 +55,6 @@ content-type: eg
 
 ![alt text](/assets/img/all-leaderboard.png "Logo Title Text 1")
 
-### ACM ICPC Philippine Programming Certificates
-![alt text](/assets/img/acm/img017.jpg)
-![alt text](/assets/img/acm/img018.jpg)
-![alt text](/assets/img/acm/img019.jpg)
-![alt text](/assets/img/acm/img020.jpg)
-
-## APC and ACPC Programming Certificates
-
-![alt text](/assets/img/acm/img004.jpg)
-![alt text](/assets/img/acm/img005.jpg)
-![alt text](/assets/img/acm/img006.jpg)
-![alt text](/assets/img/acm/img007.jpg)
-![alt text](/assets/img/acm/img008.jpg)
-![alt text](/assets/img/acm/img009.jpg)
-![alt text](/assets/img/acm/img010.jpg)
-![alt text](/assets/img/acm/img011.jpg)
-![alt text](/assets/img/acm/img013.jpg)
-![alt text](/assets/img/acm/img014.jpg)
-![alt text](/assets/img/acm/img015.jpg)
-![alt text](/assets/img/acm/img016.jpg)
-
-## Miscellaneous
-![alt text](/assets/img/acm/img021.jpg)
-![alt text](/assets/img/acm/img025.jpg)
-
-## Graduation Award - Achievement Awardee
-![alt text](/assets/img/acm/img022.jpg)
-
-## Memorabilia from joining Competitive Programming
-![alt text](/assets/img/acm/img026.jpg)
-![alt text](/assets/img/acm/img028.jpg)
-![alt text](/assets/img/acm/img029.jpg)
 
 
 

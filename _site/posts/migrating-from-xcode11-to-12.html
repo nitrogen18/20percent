@@ -4,11 +4,11 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Knowledge Continuum" property="og:site_name"/>
     <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
-    <meta content="http://localhost:4000/about/" property="article:author"><meta content="Stuck at Unit Test via MVC" property="og:title">
+    <meta content="http://localhost:4000/about/" property="article:author"><meta content="Migrating from Xcode 11 to 12" property="og:title">
     <meta content="article" property="og:type">
-    <meta content="http://localhost:4000/posts/stuck-at-unit-test-on-bitrise" property="og:url"><title>Nitrogen Blog</title>
+    <meta content="http://localhost:4000/posts/migrating-from-xcode11-to-12" property="og:url"><title>Nitrogen Blog</title>
 
-    <link rel="canonical" href="http://localhost:4000/posts/stuck-at-unit-test-on-bitrise"/>
+    <link rel="canonical" href="http://localhost:4000/posts/migrating-from-xcode11-to-12"/>
     <link rel="apple-touch-icon" href="/assets/img/profile-icon.jpg">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 
@@ -123,27 +123,12 @@
         </div>
         <p class="back-p">Home</p>
     </div></header><main>
-                <h1>Stuck at Unit Test via MVC</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#08-May-2020" class="tag">May-08-2020</a></li>
-    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Architecture" class="tag">Architecture</a></li></ul><div class="content"><p>Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel there's somethings wrong, so I look up and explore
-about it. Looking back of what i'm pointing, I tried to do Unit Test since theres something benefits of creating
-this test. It makes the code more reliable and bug free since we can do click Unit Test after doing some changes in codebase.
-But then I have this struggle on how to fully cover unit test in the Project which are UIViewControllers. I can't test them since some of my
-function and logics were tightly coupled. It means that in one function there were two or more business logic exist.</p>
+                <h1>Migrating from Xcode 11 to 12</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#09-May-2020" class="tag">May-09-2020</a></li>
+    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Xcode" class="tag">Xcode</a></li></ul><div class="content"><p>When Apple introduces Big Sur with adapting their own built-in processor which is the Apple M1 for their upcoming Macbook variant, my working project faced some problems regarding on migration from Xcode11 to Xcode12. It took me few days to figure out of what happened and the reasons why it's failing in the latest Xcode.</p>
 
-<p><strong>Unit Test</strong> via testable import need a return function in order to test it but since my functions were already coupled, I need to
-decompose/breaks them into a smaller pieces which I have my own trust issues. I feel there something strange bug will pop out
-elsewhere since I will move some of the business logic from my codebase. So what I did is <strong>UI Test</strong>, its an actual test on a simulator of physical device, It's somehow resembles in Selenium which automates the action on simulator. We can just click record and do some clicks on simulator, then XCode will provide the action code. That's the one of alternative of testing my codebase since I have this trust
-issues on breaking them down into smaller pieces/functions.</p>
+<p>Initial findings were first, Xcode12 supports the arm architecture that disabled way back old versions of Xcode. Xcode Simulator runs in <strong>x86_64 architecture Intel</strong> because the default processor used by Apple was <strong>Intel</strong>. Since they're shifting to arm, Xcode12 includes the arm architecture in Simulator. When I shift to Xcode12, it compiles to arm64 instead of x86_64 Intel. Xcode12 must detect that i'm using Intel processor and the project must compile in x86_64 architecture since I'm using Intel mac, but forces it to compile in arm64. While doing random stuffs, I tried to create a new project using latest Xcode12 to check if the problem comes out with my fresh installed Xcode12 since it can't detect my current Macbook Intel but the result was different from my project built in Xcode11. The new project can detect my current processor Intel and compiled by using x86_47 which is right. Meaning, some of the projects built in Xcode11 may face some problem same as me. Second, Xcode12 deprecate the VALID_ARCHS option in project build settings that can be seen in Xcode11 and shifts into ONLY_ACTIVE_ARCH (Build Active Architecture Only) for Xcode12. This might be another problem on why the project fails. Based on some info's that I've read, Build Active Architecture Only is an option to choose what architecture will Xcode integrate in the project, is either automatically adapt of what target architecture to be use or make it manual based on the Valid Architecture indicates in the Project Settings.</p>
 
-<p>Meanwhile, while reading some stuffs on the internet. I found this feedback which I relate of what he said.</p>
-
-<p><img src="/assets/img/someone.png" alt="alt text" /></p>
-
-<p>In his case, he had this PhotoListViewController with a lot of business logic like converting date, start/stop activity indicator,
-showing/hiding table view, also with a dependency API Service. He points out its too complicated since there were different kind of
-presentation logic in one file which resembles in my case(MVC), thats why the MVC is also called as <strong>Massive View Controller</strong>.</p>
-
-<p>Based on my readings there were good solution for this; is to implement a Software Architecture Pattern that implements <strong>Presentation/Domain Layer</strong> which all business process will be put in here. There are some of Software Architecture Pattern that implements it, the <strong>MVP</strong> and <strong>MVVC</strong> are widely know for this that has the <strong>Separation of Concern</strong> to other layer which gives benefit to implement an extensive <strong>Unit Test</strong> for every Data/UI component.</p>
+<p><strong>WIP</strong></p>
 
 <p><br />
 <br />

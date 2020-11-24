@@ -1,14 +1,14 @@
 ---
 title: Stuck at Unit Test via MVC
 tags: Architecture
-comments: true
+comments: false
 ---
 
 Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel there's somethings wrong, so I look up and explore
 about it. Looking back of what i'm pointing, I tried to do Unit Test since theres something benefits of creating
-this test, it makes the code more reliable and bug free since we can do click Unit Test after doing some changes in codebase.
-But then I have this struggle on how do I unit test my Modules which are UIViewControllers. I can't test them since some of my
-function and logics were tightly coupled. It means that in one function there were two or more business logic.
+this test. It makes the code more reliable and bug free since we can do click Unit Test after doing some changes in codebase.
+But then I have this struggle on how to fully cover unit test in the Project which are UIViewControllers. I can't test them since some of my
+function and logics were tightly coupled. It means that in one function there were two or more business logic exist.
 
 **Unit Test** via testable import need a return function in order to test it but since my functions were already coupled, I need to
 decompose/breaks them into a smaller pieces which I have my own trust issues. I feel there something strange bug will pop out
