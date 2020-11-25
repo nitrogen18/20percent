@@ -124,18 +124,34 @@
         <p class="back-p">Home</p>
     </div></header><main>
                 <h1>Migrating from Xcode 11 to 12</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#09-May-2020" class="tag">May-09-2020</a></li>
-    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Xcode" class="tag">Xcode</a></li></ul><div class="content"><p>When Apple introduces Big Sur with adapting their own built-in processor which is the Apple M1 for their upcoming Macbook variant, my working project faced some problems regarding on migration from Xcode11 to Xcode12. It took me few days to figure out of what happened and the reasons why it's failing in the latest Xcode.</p>
+    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Xcode" class="tag">Xcode</a></li></ul><div class="content"><p>When Apple introduces Big Sur with adapting their own built-in processor which is the Apple M1 for their upcoming Macbook variants, my working project faced some problems regarding on migration from Xcode11 to Xcode12. It took me few days to figure out of what happened and the reasons why it's failing in the latest Xcode.</p>
 
-<p>Initial findings were first, Xcode12 supports the arm architecture that disabled way back old versions of Xcode. Xcode Simulator runs in <strong>x86_64 architecture Intel</strong> because the default processor used by Apple was <strong>Intel</strong>. Since they're shifting to arm, Xcode12 includes the arm architecture in Simulator. When I shift to Xcode12, it compiles to arm64 instead of x86_64 Intel. Xcode12 must detect that i'm using Intel processor and the project must compile in x86_64 architecture since I'm using Intel mac, but forces it to compile in arm64. While doing random stuffs, I tried to create a new project using latest Xcode12 to check if the problem comes out with my fresh installed Xcode12 since it can't detect my current Macbook Intel but the result was different from my project built in Xcode11. The new project can detect my current processor Intel and compiled by using x86_47 which is right. Meaning, some of the projects built in Xcode11 may face some problem same as me. Second, Xcode12 deprecate the VALID_ARCHS option in project build settings that can be seen in Xcode11 and shifts into ONLY_ACTIVE_ARCH (Build Active Architecture Only) for Xcode12. This might be another problem on why the project fails. Based on some info's that I've read, Build Active Architecture Only is an option to choose what architecture will Xcode integrate in the project, is either automatically adapt of what target architecture to be use or make it manual based on the Valid Architecture indicates in the Project Settings.</p>
+<p>Initial findings were first, Xcode12 supports the arm architecture that disabled way back old versions of Xcode. Xcode Simulator runs in <code class="highlighter-rouge">x86_64 architecture Intel</code> because the default processor used by Apple was <code class="highlighter-rouge">Intel</code>. Since they're shifting to <code class="highlighter-rouge">arm</code>, Xcode12 includes the <code class="highlighter-rouge">arm architecture</code> in Simulator. When I shift to Xcode12, it compiles to <code class="highlighter-rouge">arm64</code> instead of <code class="highlighter-rouge">x86_64 Intel</code>. Xcode12 must detect that i'm using <code class="highlighter-rouge">Intel processor</code> and the project must compile in <code class="highlighter-rouge">x86_64 architecture</code>, but forces it to compile in <code class="highlighter-rouge">arm64</code>. While doing random stuffs, I tried to create a new project using latest Xcode12 to check if the problem comes out with my fresh installed Xcode12 since it can't detect my current <code class="highlighter-rouge">Macbook Intel</code>, but the result was different from my project built in Xcode11. The new project can detect my current processor <code class="highlighter-rouge">Intel</code> and it compiled by using <code class="highlighter-rouge">x86_47</code> which is right. Meaning, some of the projects built in Xcode11 may face some problem same as me. Second, Xcode12 deprecate the <code class="highlighter-rouge">VALID_ARCHS</code> option in project build settings that can be seen in Xcode11 and shifts into <code class="highlighter-rouge">ONLY_ACTIVE_ARCH</code> (Build Active Architecture Only) for Xcode12. This might be another problem on why the project fails. Based on some info's that I've read, <code class="highlighter-rouge">Build Active Architecture Only</code> is an option to choose what architecture will Xcode integrate in the project. It's either automatically adapt of what target architecture to be use or make it manual based on the Valid Architecture indicates in the Project Settings. I tried to use the yes option in <code class="highlighter-rouge">Build Active Architecture Only</code> but still theres an error popping out even I set it to all of my schemes, so I tried the no option, and put the <code class="highlighter-rouge">VALID_ARCHS</code> manually. For my manual configuration, I only set two settings for <code class="highlighter-rouge">VALID_ARCHS</code> and one for <code class="highlighter-rouge">Exclude Architecture</code>.</p>
 
-<p><strong>WIP</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Build Active Architecture = no
+
+Excluded Architecture
+Any iOS Simulator SDK = arm64
+
+VALID_ARCHS
+Any iOS Simulator SDK = x86_64
+Any iOS SDK = arm64 armv7s armv7
+</code></pre></div></div>
+
+<p>The reasons why I exclude the <code class="highlighter-rouge">arm64</code> in Any iOS Simulator is that to force the Xcode to avoid compile it as an <code class="highlighter-rouge">arm64</code> because I'm not using <code class="highlighter-rouge">Apple M1 chip</code>. To complete the <code class="highlighter-rouge">VALID_ARCHS</code> configuration, I include the <code class="highlighter-rouge">x86_64</code> too in the <code class="highlighter-rouge">VALID_ARCHS</code> for iOS Simulator which is <code class="highlighter-rouge">x86_64</code>. For the the iOS SDK, I include all valid archs for iOS which are <code class="highlighter-rouge">arm64 armv7s armv7</code>.</p>
+
+<p><img src="/assets/img/upgrade-xcode/exclude.png" alt="alt text" /></p>
+
+<p><img src="/assets/img/upgrade-xcode/valid.png" alt="alt text" /></p>
+
+<p>The drawbacks of this configuration is that if someone build it using their Xcode12, it will fail since the default project settings were already modified specially using Xcode 11. It will conflict since the Xcode11 <code class="highlighter-rouge">VALID_ARCHS</code> shifts to <code class="highlighter-rouge">ONLY_ACTIVE_ARCH</code> for Xcode12. If someone needs to build this project, the first step would be doing a <code class="highlighter-rouge">pod install</code> or for totally clean pod build, execute the <code class="highlighter-rouge">pod deintegrate</code> first before proceeding to <code class="highlighter-rouge">pod install</code>. After that if the user wants to shift to their current projects, they must do the <code class="highlighter-rouge">pod deintegrate</code> <code class="highlighter-rouge">pod install</code> to revert back their default pod build settings configuration.</p>
 
 <p><br />
 <br />
 <br /></p>
 
 </div><!-- Add backlinks to the current page --></main><div id="copyright">
-    <p id="copyright-notice">© nitrogen17</p>
+    <p id="copyright-notice">© nitrogen17 aka GeForceGTX</p>
 </div>
 </div>
         <button class="scroll-to-top" id="scroll-to-top"><i class="fa fa-chevron-up"></i></button>

@@ -8,9 +8,9 @@ Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel ther
 about it. Looking back of what i'm pointing, I tried to do Unit Test since theres something benefits of creating
 this test. It makes the code more reliable and bug free since we can do click Unit Test after doing some changes in codebase.
 But then I have this struggle on how to fully cover unit test in the Project which are UIViewControllers. I can't test them since some of my
-function and logics were tightly coupled. It means that in one function there were two or more business logic exist.
+function and logics were tightly coupled. It means that in one function there were two or more business logic.
 
-**Unit Test** via testable import need a return function in order to test it but since my functions were already coupled, I need to
+**Unit Test** via testable import needs a return function in order to test it but since my functions were already coupled, I need to
 decompose/breaks them into a smaller pieces which I have my own trust issues. I feel there something strange bug will pop out
 elsewhere since I will move some of the business logic from my codebase. So what I did is **UI Test**, its an actual test on a simulator of physical device, It's somehow resembles in Selenium which automates the action on simulator. We can just click record and do some clicks on simulator, then XCode will provide the action code. That's the one of alternative of testing my codebase since I have this trust
 issues on breaking them down into smaller pieces/functions.

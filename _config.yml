@@ -6,7 +6,7 @@ user_description_1: Reading dev stuffs everyday 📚
 notes_url: "https://github.com/nitrogen17"
 profile_pic: /assets/img/profile-icon.jpg
 favicon: /assets/img/apple.ico
-copyright_name: nitrogen17
+copyright_name: nitrogen17 aka GeForceGTX
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "www.nitrodev.ga" # the base hostname & protocol for your site, e.g. http://example.com
 encoding: utf-8
