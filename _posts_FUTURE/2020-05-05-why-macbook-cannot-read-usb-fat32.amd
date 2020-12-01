@@ -1,0 +1,18 @@
+---
+title: Why macbook cannot read usb with fat32 but running in NTFS?s
+tags: Architecture
+comments: true
+---
+
+Learning iOS View Controller Lifecycle, im asking myself, what will happen
+in view Controller after I do a pop or perform segue? does it retain its
+properties and deallocate it on the memory? or it lives elsewher in deviceß
+
+
+There is three way to create UI (Which attached with a viewController class ).
+From the .xib
+From Code
+By Storyboard
+
+https://medium.com/@gauravkeshre/swift-object-lifecycle-b39d232cb99b
+https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/WorkWithViewControllers.html
