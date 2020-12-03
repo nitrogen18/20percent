@@ -1,0 +1,15 @@
+---
+title: private final vs private and fileprivate
+tags: swift
+comments: false
+---
+
+https://stackoverflow.com/questions/42865789/swift-private-var-func-vs-private-final-var-func
+
+Description:
+
+final used for reduce dynamic dispatch at runtime.In this way the performance will be better.
+
+The program has to determine at runtime which method or peroperty is being referred to and then perfom an indirect call or indirect access. This technique, called dynamic dispatch.
+
+private keyword used for visibility. When you use private if complier find there are no overridden declarations then complier will infer a final keyword in front then the all the calls become direct. Performance is improved too. But should be not as good as final.

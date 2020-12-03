@@ -58,7 +58,11 @@ content-type: eg
 
 ![alt text](/assets/img/all-leaderboard.png "Logo Title Text 1")
 
+## Public Repo Github Contribution
 
+[https://github.com/pwnlandia/mhn/issues/670](https://github.com/pwnlandia/mhn/issues/670)
+
+![alt text](/assets/img/mhn-report.png)
 
 <br>
 <br>

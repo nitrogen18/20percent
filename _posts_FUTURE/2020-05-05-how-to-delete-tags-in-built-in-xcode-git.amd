@@ -1,0 +1,9 @@
+---
+title: How to delete tags in build-in Xcode Git
+tags: Xcode
+comments: false
+---
+
+1. Delete the tags in Xcode Git
+2. Push the local branch and include the tag options
+3. The remote tags will be updated. *Gitlab
