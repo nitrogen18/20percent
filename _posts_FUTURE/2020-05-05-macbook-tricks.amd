@@ -1,0 +1,15 @@
+---
+title: macbook tricks
+tags: Macbook
+comments: false
+---
+
+If you have restricted internet connection that wouldn't allow to connect any phone device in a router but allowed on macbooks,
+you can do this trick by sharing your internet connection from your macbook to phone.
+
+1. Open Spotlight Search and look for `System Preferences`
+2. Search from search bar, `Sharing`
+3. Check the internet sharing and choose the port that you want to share the internet
+4. Done!
+
+https://www.howtogeek.com/214053/how-to-turn-your-mac-into-a-wi-fi-hotspot/
