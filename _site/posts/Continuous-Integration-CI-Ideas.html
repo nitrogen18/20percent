@@ -4,10 +4,11 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Knowledge Continuum" property="og:site_name"/>
     <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
-    <meta content="http://localhost:4000/about/" property="article:author"><meta content="website" property="og:type">
-    <meta content="http://localhost:4000/" property="og:url"><title>Nitrogen Blog</title>
+    <meta content="http://localhost:4000/about/" property="article:author"><meta content="Simple Continuous Integration Ideas (CI)" property="og:title">
+    <meta content="article" property="og:type">
+    <meta content="http://localhost:4000/posts/Continuous-Integration-CI-Ideas" property="og:url"><title>Nitrogen Blog</title>
 
-    <link rel="canonical" href="http://localhost:4000/"/>
+    <link rel="canonical" href="http://localhost:4000/posts/Continuous-Integration-CI-Ideas"/>
     <link rel="apple-touch-icon" href="/assets/img/profile-icon.jpg">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 
@@ -113,33 +114,113 @@
                     fuzzy: false,
                     limit: 4
                     })
-    </script></header><div class="feed-title-excerpt-block disable-select" data-url="http://localhost:4000/posts/Continuous-Integration-CI-Ideas">
-            <a href="/posts/Continuous-Integration-CI-Ideas" style="text-decoration: none; color: #555555;"><p class="feed-title">Simple Continuous Integration Ideas (CI)</p><p class="feed-excerpt">Continuous Integration and Deployment (CI/CD) is a must in developing an apps specially if we want to make our life easier. It automates our daily task in a sense of someone doing our repetitive ac...</p>
-            </a>
-        </div><div class="feed-title-excerpt-block disable-select" data-url="http://localhost:4000/posts/migrating-from-xcode11-to-12">
-            <a href="/posts/migrating-from-xcode11-to-12" style="text-decoration: none; color: #555555;"><p class="feed-title">Migrating from Xcode 11 to 12</p><p class="feed-excerpt">When Apple introduced Big Sur with adapting their own built-in processor, which is the Apple M1 for their upcoming Macbook variants, my working project faced some problems regarding on migration fr...</p>
-            </a>
-        </div><div class="feed-title-excerpt-block disable-select" data-url="http://localhost:4000/posts/stuck-at-unit-test-on-bitrise">
-            <a href="/posts/stuck-at-unit-test-on-bitrise" style="text-decoration: none; color: #555555;"><p class="feed-title">Stuck at Unit Test via MVC</p><p class="feed-excerpt">Hello, Good day! gonna share my thoughts about this Unit Test topic. I feel there&#39;s somethings wrong, so I look up and explore
-about it. Looking back of what i&#39;m pointing, I tried to do Uni...</p>
-            </a>
-        </div><div class="feed-title-excerpt-block disable-select" data-url="http://localhost:4000/posts/pod-install-via-no-internet">
-            <a href="/posts/pod-install-via-no-internet" style="text-decoration: none; color: #555555;"><p class="feed-title">Pod Install via No Internet</p><p class="feed-excerpt">What will happen if we pod install without an internet?. By adding parameter --verbose we can check on what happens inside the pod command. In verbose log, pod checks the pod cache library first if...</p>
-            </a>
-        </div><div class="feed-title-excerpt-block disable-select" data-url="http://localhost:4000/posts/update-realm-studio-to-latest-version">
-            <a href="/posts/update-realm-studio-to-latest-version" style="text-decoration: none; color: #555555;"><p class="feed-title">Update Realm Studio to Latest Version</p><p class="feed-excerpt">If you encounter this error, it seems that you have outdated Realm Studio like me. Maybe you download it somewhere specially from outdated guides via Internet. Similar case which I get a very low v...</p>
-            </a>
-        </div><div class="feed-title-excerpt-block disable-select" data-url="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually">
-            <a href="/posts/Firebase-Uploading-dSYM-Manually" style="text-decoration: none; color: #555555;"><p class="feed-title">Firebase Uploading dSYM Manually</p><p class="feed-excerpt">I have this problem in my Production Scheme when someone user crashes their app and
-the dSYM&#39;s were not uploaded in our Firebase. It seems that it needs a lot of work to do in order to upload t...</p>
-            </a>
-        </div><div class="feed-title-excerpt-block disable-select" data-url="http://localhost:4000/posts/Bring-iPhone-Simulator-in-Front">
-            <a href="/posts/Bring-iPhone-Simulator-in-Front" style="text-decoration: none; color: #555555;"><p class="feed-title">Bring iPhone Simulator in Front</p><p class="feed-excerpt">When I do some build and run via Xcode, sometimes the Simulator stuck at the back of IDE and it needs to be click manually in order to show. In this script, it will bring the simulator in front eve...</p>
-            </a>
-        </div><div class="feed-title-excerpt-block disable-select" data-url="http://localhost:4000/posts/Add-Telegram-Notification-on-Bitrise">
-            <a href="/posts/Add-Telegram-Notification-on-Bitrise" style="text-decoration: none; color: #555555;"><p class="feed-title">Add Telegram Notification on Bitrise</p><p class="feed-excerpt">If you&#39;re using Bitrise and you always use Telegram, this workflow step will help you a lot by sending Bitrise Status build to your Telegram Account. Think about a trigger when you push to spec...</p>
-            </a>
-        </div><div id="copyright">
+    </script><div class="main-site-subheader disable-select" id="scroll-head" onclick="window.location.assign('/');">
+        <div class="back-icon">
+            <svg class="ripple" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z"/>
+            </svg>
+        </div>
+        <p class="back-p">Home</p>
+    </div></header><main>
+                <h1>Simple Continuous Integration Ideas (CI)</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#10-May-2020" class="tag">May-10-2020</a></li>
+    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#Tools" class="tag">Tools</a></li></ul><div class="content"><p>Continuous Integration and Deployment (CI/CD) is a must in developing an apps specially if we want to make our life easier. It automates our daily task in a sense of someone doing our repetitive actions instead of us. By integrating Continuous Integration/Deployment, there's a machine that acts as a bot and do certain acts. Some CI/CD Server provides steps for developer to choose based on their ideal workflow. There were a lot of rules to be chosen and the most popular were the Unit Tests and Automatic Deployment which automatically archive and deploy the app in a certain App platform (Firebase/Appstore/Playstore) etc.</p>
+
+<p>I've already tried <code class="highlighter-rouge">Continuous Deployment</code> step which automatically deploys <code class="highlighter-rouge">.ipa</code> (iOS Appstore Package) file to Firebase instead of doing manual steps. It's very helpful specially for the people who are doing a lot of multitasking.</p>
+
+<p>Going back to CI/CD, these are my current configuration in our CI Server with integrated Unit/UI attached on project. Also sharing this for my current workflow configurations and some simple ideas of CI.</p>
+
+<p><strong>Bitrise CI/CD</strong></p>
+
+<ol>
+  <li>CHAIN-PRODUCTION-UnitUITest-Automated</li>
+  <li>CHAIN-STAGING-UnitUITest-Automated</li>
+</ol>
+
+<p>First trigger will starts on CHAIN-PRODUCTION. At the end of workflow, it triggers the next Workflow which is <code class="highlighter-rouge">CHAIN-STAGING</code></p>
+
+<p>Workflow: <strong>CHAIN-PRODUCTION</strong></p>
+<ul>
+  <li>Stack: Xcode11.7.x, on macOS 10.15.6 (Catalina)</li>
+  <li>Env var: $BITRISE_GIT_BRANCH = master</li>
+  <li>Before upgrading my Xcode to 12, my last setup was using XCode Version 11.7, so i change some configuration based on my last Xcode and MacOS.
+    <ul>
+      <li>Xcode 11.7 , macOS 10.x (Catalina)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Workflow: <strong>CHAIN-STAGING</strong></p>
+<ul>
+  <li>Stack: Xcode 12.2.x on macOS 10.15.6 (Catalina)</li>
+  <li>Env var: $BITRISE_GIT_BRANCH = develop (default)</li>
+  <li>Since my current Xcode is already version 12.x (Xcode12), I used this version to mock up with my current setup except the OS. I've upgraded my OS to BigSur 12 already but the currently available stacks on Bitrise were Catalina, Mojave and High Sierra which already have builtin Xcode Version.
+    <ul>
+      <li>Xcode 12.2.x, macOS 10.x (Catalina)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Note: I added Sample ENV Login in Xcode
+Select Scheme &gt; Test &gt; Arguments &gt; Environment Variables &gt; Name Value, then add your ENV Values</p>
+
+<p><strong>Simple CI Ideas:</strong></p>
+
+<p><strong>git push develop</strong></p>
+<ul>
+  <li>trigger Unit/UI Tests
+    <ul>
+      <li>every push in Develop Branch, Unit/UI Test CI on Bitrise will trigger. The downside is when we're changing simple part of the code, this idea will still trigger. For example, just adding a newline or space. This is very inconvenient to do a trigger for just changing a simple part of the code.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>git push with tag</strong></p>
+<ul>
+  <li>trigger auto deployment to firebase or auto deployment to firebase with unit/ui tests
+    <ul>
+      <li>every tag included in push, the CI will trigger. This is very ideal CI steps for me since Bitrise CI will only trigger once it detects tag on my git push. Meaning it will solve the first CI Idea which always trigger when push in the repo. Even if we push a lot on the remote repo, as long as it didn't include any tags, this CI idea will never trigger. The downside is when we have to specify the trigger based on the name of the tags, for example staging and production, CI will still executes. This CI ideas can't identify particular tags because it's primary definition is to <code class="highlighter-rouge">trigger by tag</code>`</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Specific Remote Branch for deployment</strong></p>
+<ul>
+  <li>This idea comes with my iOS head, he suggest that there's specific branch for deployment or production, once merge request accepted or someone directly push on that branch, the Bitrise CI will trigger. For example
+  Remote Branch:
+    <ul>
+      <li>master</li>
+      <li>develop</li>
+      <li>*firebase-deployment
+In this example, we add specific remote branch for firebase named <code class="highlighter-rouge">firebase-deployment</code>. Once we push on that remote branch, the Bitrise CD will archive and deploy the app to firebase. It solves the problem in <code class="highlighter-rouge">git push with tag</code> since theres specific remote branch for it. We can create two branch for Unit/UITest and for Firebase-Deployment but it violates the <strong>Gitflow Concept</strong> if we have this branches living in our Remote Repository. I will discuss this Gitflow via iOS in the near future.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Conclusion:</strong> CI/CD is very beneficial for Mobile Developer since it makes their life more easier, also for Enterprise Apps that include a lot of repetitive work. In my current CI Setup, doing daily CI seems unlogical to do instead just wrap it Unit or UI test on <code class="highlighter-rouge">Pull Request</code> or <code class="highlighter-rouge">push</code> on remote branch, but there were some benefits of integrating this steps.</p>
+
+<p><strong>Benefits of Daily CI</strong></p>
+<ol>
+  <li>It ensures that the User can login for the rest of the day given that the Unit/UI Test performed before the starting of app usage, ex. 7:30am.</li>
+  <li>It gives relief when you step aside the project for a while. You just need to check Telegram for CI Unit/UI Test Result, and also you can monitor if the app still run.</li>
+</ol>
+
+<p>Overall, it helps to ensure the app will run on a daily basis. Ex. Login, Logout, Update some data in phone, etc. But in the end, it can be solve by doing Unit Test via endpoints. Both were beneficial which are [Unit and UI Tests] as long us we cover to test the core or critical business logic of the app, we're good ✌🏻.</p>
+
+<p><br />
+<br />
+<br /></p>
+
+</div><!-- Add backlinks to the current page --><div class="related" id="jekyll-seamless-relatedposts">
+    <h4 class="medium-small">Related Posts</h4>
+    <div class="related-wrapper"><div class="related-group"><a href="/posts/update-realm-studio-to-latest-version">
+            <p class="related-title">Update Realm Studio to Latest Version</p>
+            <p class="related-excerpt">
+
+If you encounter this error, it seems that you have outdated Realm Studio like me. Maybe you download it somewhere specially from outda...</p>
+          </a></div></div>
+      <br/>
+    </div></main><div id="copyright">
     <p id="copyright-notice">© nitrogen17 aka GeForceGTX</p>
 </div>
 </div>
@@ -150,26 +231,5 @@ the dSYM&#39;s were not uploaded in our Firebase. It seems that it needs a lot o
         document.getElementById("scroll-to-top").addEventListener("click", function() {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
         });
-    </script><nav class="context-menu" id="context-menu">
-    <ul class="context-menu__items">
-      <li class="context-menu__item">
-            <a href="#" class="context-menu__link" data-action="backlinks">
-              View Linked References
-            </a>
-      </li>
-      <li class="context-menu__item">
-            <a href="#" class="context-menu__link" data-action="related-posts">
-              View Related Posts
-            </a>
-      </li>
-      <li class="context-menu__item">
-        <a href="#" class="context-menu__link" data-action="new-tab">
-          Open in new tab
-        </a>
-      </li>
-    </ul>
-</nav>
-<nav class="context-menu-res" id="context-menu-res">
-</nav>
-<script src="/assets/js/contextmenu.js"></script></body>
+    </script></body>
 </html>

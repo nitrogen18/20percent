@@ -1,1 +1,1 @@
-Migrating from Xcode 11 to 12;Stuck at Unit Test via MVC;Pod Install via No Internet;Update Realm Studio To Latest Version;Firebase Uploading dSYM Manually;Bring iPhone Simulator in Front;Add Telegram Notification on Bitrise;
+Simple Continuous Integration Ideas (CI);Migrating from Xcode 11 to 12;Stuck at Unit Test via MVC;Pod Install via No Internet;Update Realm Studio to Latest Version;Firebase Uploading dSYM Manually;Bring iPhone Simulator in Front;Add Telegram Notification on Bitrise;

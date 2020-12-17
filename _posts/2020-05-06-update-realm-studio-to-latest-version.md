@@ -2,6 +2,8 @@
 title: Update Realm Studio to Latest Version
 tags: Tools
 comments: false
+---
+
 ![alt text](/assets/img/unsupported-realm-version/unsupported-realm.png)
 
 If you encounter this error, it seems that you have outdated Realm Studio like me. Maybe you download it somewhere specially from outdated guides via Internet. Similar case which I get a very low version ```Version 3.10.0```. Prior to latest version of Realm Studio today, it jumps to ```Version 10.0.1``` which is very far from my Version that I have.

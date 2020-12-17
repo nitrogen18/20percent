@@ -1,4 +1,89 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-07T11:32:20+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> iOS Dev Notes</title><entry><title type="html">Migrating from Xcode 11 to 12</title><link href="http://localhost:4000/posts/migrating-from-xcode11-to-12" rel="alternate" type="text/html" title="Migrating from Xcode 11 to 12" /><published>2020-05-09T00:00:00+08:00</published><updated>2020-05-09T00:00:00+08:00</updated><id>http://localhost:4000/posts/migrating-from-xcode11-to-12</id><content type="html" xml:base="http://localhost:4000/posts/migrating-from-xcode11-to-12">&lt;p&gt;When Apple introduced Big Sur with adapting their own built-in processor, which is the Apple M1 for their upcoming Macbook variants, my working project faced some problems regarding on migration from Xcode11 to Xcode12. It took me few days to figure out what happened and the reasons why the latest Xcode was failing.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-17T16:07:14+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> iOS Dev Notes</title><entry><title type="html">Simple Continuous Integration Ideas (CI)</title><link href="http://localhost:4000/posts/Continuous-Integration-CI-Ideas" rel="alternate" type="text/html" title="Simple Continuous Integration Ideas (CI)" /><published>2020-05-10T00:00:00+08:00</published><updated>2020-05-10T00:00:00+08:00</updated><id>http://localhost:4000/posts/Continuous-Integration-CI-Ideas</id><content type="html" xml:base="http://localhost:4000/posts/Continuous-Integration-CI-Ideas">&lt;p&gt;Continuous Integration and Deployment (CI/CD) is a must in developing an apps specially if we want to make our life easier. It automates our daily task in a sense of someone doing our repetitive actions instead of us. By integrating Continuous Integration/Deployment, there's a machine that acts as a bot and do certain acts. Some CI/CD Server provides steps for developer to choose based on their ideal workflow. There were a lot of rules to be chosen and the most popular were the Unit Tests and Automatic Deployment which automatically archive and deploy the app in a certain App platform (Firebase/Appstore/Playstore) etc.&lt;/p&gt;
+
+&lt;p&gt;I've already tried &lt;code class=&quot;highlighter-rouge&quot;&gt;Continuous Deployment&lt;/code&gt; step which automatically deploys &lt;code class=&quot;highlighter-rouge&quot;&gt;.ipa&lt;/code&gt; (iOS Appstore Package) file to Firebase instead of doing manual steps. It's very helpful specially for the people who are doing a lot of multitasking.&lt;/p&gt;
+
+&lt;p&gt;Going back to CI/CD, these are my current configuration in our CI Server with integrated Unit/UI attached on project. Also sharing this for my current workflow configurations and some simple ideas of CI.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bitrise CI/CD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;CHAIN-PRODUCTION-UnitUITest-Automated&lt;/li&gt;
+  &lt;li&gt;CHAIN-STAGING-UnitUITest-Automated&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;First trigger will starts on CHAIN-PRODUCTION. At the end of workflow, it triggers the next Workflow which is &lt;code class=&quot;highlighter-rouge&quot;&gt;CHAIN-STAGING&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Workflow: &lt;strong&gt;CHAIN-PRODUCTION&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Stack: Xcode11.7.x, on macOS 10.15.6 (Catalina)&lt;/li&gt;
+  &lt;li&gt;Env var: $BITRISE_GIT_BRANCH = master&lt;/li&gt;
+  &lt;li&gt;Before upgrading my Xcode to 12, my last setup was using XCode Version 11.7, so i change some configuration based on my last Xcode and MacOS.
+    &lt;ul&gt;
+      &lt;li&gt;Xcode 11.7 , macOS 10.x (Catalina)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Workflow: &lt;strong&gt;CHAIN-STAGING&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Stack: Xcode 12.2.x on macOS 10.15.6 (Catalina)&lt;/li&gt;
+  &lt;li&gt;Env var: $BITRISE_GIT_BRANCH = develop (default)&lt;/li&gt;
+  &lt;li&gt;Since my current Xcode is already version 12.x (Xcode12), I used this version to mock up with my current setup except the OS. I've upgraded my OS to BigSur 12 already but the currently available stacks on Bitrise were Catalina, Mojave and High Sierra which already have builtin Xcode Version.
+    &lt;ul&gt;
+      &lt;li&gt;Xcode 12.2.x, macOS 10.x (Catalina)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note: I added Sample ENV Login in Xcode
+Select Scheme &amp;gt; Test &amp;gt; Arguments &amp;gt; Environment Variables &amp;gt; Name Value, then add your ENV Values&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Simple CI Ideas:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;git push develop&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;trigger Unit/UI Tests
+    &lt;ul&gt;
+      &lt;li&gt;every push in Develop Branch, Unit/UI Test CI on Bitrise will trigger. The downside is when we're changing simple part of the code, this idea will still trigger. For example, just adding a newline or space. This is very inconvenient to do a trigger for just changing a simple part of the code.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;git push with tag&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;trigger auto deployment to firebase or auto deployment to firebase with unit/ui tests
+    &lt;ul&gt;
+      &lt;li&gt;every tag included in push, the CI will trigger. This is very ideal CI steps for me since Bitrise CI will only trigger once it detects tag on my git push. Meaning it will solve the first CI Idea which always trigger when push in the repo. Even if we push a lot on the remote repo, as long as it didn't include any tags, this CI idea will never trigger. The downside is when we have to specify the trigger based on the name of the tags, for example staging and production, CI will still executes. This CI ideas can't identify particular tags because it's primary definition is to &lt;code class=&quot;highlighter-rouge&quot;&gt;trigger by tag&lt;/code&gt;`&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Specific Remote Branch for deployment&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;This idea comes with my iOS head, he suggest that there's specific branch for deployment or production, once merge request accepted or someone directly push on that branch, the Bitrise CI will trigger. For example
+  Remote Branch:
+    &lt;ul&gt;
+      &lt;li&gt;master&lt;/li&gt;
+      &lt;li&gt;develop&lt;/li&gt;
+      &lt;li&gt;*firebase-deployment
+In this example, we add specific remote branch for firebase named &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase-deployment&lt;/code&gt;. Once we push on that remote branch, the Bitrise CD will archive and deploy the app to firebase. It solves the problem in &lt;code class=&quot;highlighter-rouge&quot;&gt;git push with tag&lt;/code&gt; since theres specific remote branch for it. We can create two branch for Unit/UITest and for Firebase-Deployment but it violates the &lt;strong&gt;Gitflow Concept&lt;/strong&gt; if we have this branches living in our Remote Repository. I will discuss this Gitflow via iOS in the near future.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Conclusion:&lt;/strong&gt; CI/CD is very beneficial for Mobile Developer since it makes their life more easier, also for Enterprise Apps that include a lot of repetitive work. In my current CI Setup, doing daily CI seems unlogical to do instead just wrap it Unit or UI test on &lt;code class=&quot;highlighter-rouge&quot;&gt;Pull Request&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;push&lt;/code&gt; on remote branch, but there were some benefits of integrating this steps.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Benefits of Daily CI&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It ensures that the User can login for the rest of the day given that the Unit/UI Test performed before the starting of app usage, ex. 7:30am.&lt;/li&gt;
+  &lt;li&gt;It gives relief when you step aside the project for a while. You just need to check Telegram for CI Unit/UI Test Result, and also you can monitor if the app still run.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Overall, it helps to ensure the app will run on a daily basis. Ex. Login, Logout, Update some data in phone, etc. But in the end, it can be solve by doing Unit Test via endpoints. Both were beneficial which are [Unit and UI Tests] as long us we cover to test the core or critical business logic of the app, we're good ✌🏻.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Tools" /><summary type="html">Continuous Integration and Deployment (CI/CD) is a must in developing an apps specially if we want to make our life easier. It automates our daily task in a sense of someone doing our repetitive actions instead of us. By integrating Continuous Integration/Deployment, there's a machine that acts as a bot and do certain acts. Some CI/CD Server provides steps for developer to choose based on their ideal workflow. There were a lot of rules to be chosen and the most popular were the Unit Tests and Automatic Deployment which automatically archive and deploy the app in a certain App platform (Firebase/Appstore/Playstore) etc.</summary></entry><entry><title type="html">Migrating from Xcode 11 to 12</title><link href="http://localhost:4000/posts/migrating-from-xcode11-to-12" rel="alternate" type="text/html" title="Migrating from Xcode 11 to 12" /><published>2020-05-09T00:00:00+08:00</published><updated>2020-05-09T00:00:00+08:00</updated><id>http://localhost:4000/posts/migrating-from-xcode11-to-12</id><content type="html" xml:base="http://localhost:4000/posts/migrating-from-xcode11-to-12">&lt;p&gt;When Apple introduced Big Sur with adapting their own built-in processor, which is the Apple M1 for their upcoming Macbook variants, my working project faced some problems regarding on migration from Xcode11 to Xcode12. It took me few days to figure out what happened and the reasons why the latest Xcode was failing.&lt;/p&gt;
 
 &lt;p&gt;Initial findings were firstly, Xcode12 supports the arm architecture that disabled way back old versions of Xcode. Xcode Simulator runs in x86_64 architecture Intel because the default processor used by Apple was Intel. Since they're shifting to arm, Xcode12 included the arm architecture in Simulator. When I shifted to Xcode12, it compiled to arm64 instead of x86_64 Intel. Xcode12 must detect that i'm using Intel processor and the project must compile in x86_64 architecture, but forces it to compile in arm64. While doing random stuff, I tried to create a new project using latest Xcode12 to check if the problem will come out with my fresh installed Xcode12 since it can't detect my current Macbook Intel, but the result was different from my project built in Xcode11. The new project can detect my current processor Intel and it compiled by using x86_47 which is right. This means that some of the projects built in Xcode11 may face some problem same as mine. Secondly, Xcode12 deprecate the VALID_ARCHS option in project build settings that can be seen in Xcode11 and shifts into ONLY_ACTIVE_ARCH (Build Active Architecture Only) for Xcode12. This might be another problem on why the project failed. Based on some information that I've read, Build Active Architecture Only is an option to choose what architecture will Xcode integrate in the project. It either automatically adapt what target architecture will be used or make it manual based on the Valid Architecture indicated in the Project Settings. I tried to use the yes option in Build Active Architecture Only but still there's an error popping out even when I set it to all of my schemes, so I tried the no option, and put the VALID_ARCHS manually. For my manual configuration, I only set two settings for VALID_ARCHS and one for Exclude Architecture.&lt;/p&gt;
 
@@ -72,11 +157,7 @@ presentation logic in one file which resembles in my case(MVC), thats why the MV
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Cocoapod" /><summary type="html">What will happen if we pod install without an internet?. By adding parameter --verbose we can check on what happens inside the pod command. In verbose log, pod checks the pod cache library first if the pod library exists; If not, then it will search the pod library on the internet.</summary></entry><entry><title type="html">Update Realm Studio To Latest Version</title><link href="http://localhost:4000/posts/update-realm-studio-to-latest-version" rel="alternate" type="text/html" title="Update Realm Studio To Latest Version" /><published>2020-05-06T00:00:00+08:00</published><updated>2020-05-06T00:00:00+08:00</updated><id>http://localhost:4000/posts/update-realm-studio-to-latest-version</id><content type="html" xml:base="http://localhost:4000/posts/update-realm-studio-to-latest-version">&lt;hr /&gt;
-&lt;p&gt;title: Update Realm Studio to Latest Version
-tags: Tools
-comments: false
-&lt;img src=&quot;/assets/img/unsupported-realm-version/unsupported-realm.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Cocoapod" /><summary type="html">What will happen if we pod install without an internet?. By adding parameter --verbose we can check on what happens inside the pod command. In verbose log, pod checks the pod cache library first if the pod library exists; If not, then it will search the pod library on the internet.</summary></entry><entry><title type="html">Update Realm Studio to Latest Version</title><link href="http://localhost:4000/posts/update-realm-studio-to-latest-version" rel="alternate" type="text/html" title="Update Realm Studio to Latest Version" /><published>2020-05-06T00:00:00+08:00</published><updated>2020-05-06T00:00:00+08:00</updated><id>http://localhost:4000/posts/update-realm-studio-to-latest-version</id><content type="html" xml:base="http://localhost:4000/posts/update-realm-studio-to-latest-version">&lt;p&gt;&lt;img src=&quot;/assets/img/unsupported-realm-version/unsupported-realm.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you encounter this error, it seems that you have outdated Realm Studio like me. Maybe you download it somewhere specially from outdated guides via Internet. Similar case which I get a very low version &lt;code class=&quot;highlighter-rouge&quot;&gt;Version 3.10.0&lt;/code&gt;. Prior to latest version of Realm Studio today, it jumps to &lt;code class=&quot;highlighter-rouge&quot;&gt;Version 10.0.1&lt;/code&gt; which is very far from my Version that I have.&lt;/p&gt;
 
@@ -105,7 +186,7 @@ comments: false
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">title: Update Realm Studio to Latest Version tags: Tools comments: false</summary></entry><entry><title type="html">Firebase Uploading dSYM Manually</title><link href="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually" rel="alternate" type="text/html" title="Firebase Uploading dSYM Manually" /><published>2020-05-03T00:00:00+08:00</published><updated>2020-05-03T00:00:00+08:00</updated><id>http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually</id><content type="html" xml:base="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually">&lt;p&gt;I have this problem in my &lt;strong&gt;Production Scheme&lt;/strong&gt; when someone user crashes their app and
+&lt;br /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Tools" /><summary type="html"></summary></entry><entry><title type="html">Firebase Uploading dSYM Manually</title><link href="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually" rel="alternate" type="text/html" title="Firebase Uploading dSYM Manually" /><published>2020-05-03T00:00:00+08:00</published><updated>2020-05-03T00:00:00+08:00</updated><id>http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually</id><content type="html" xml:base="http://localhost:4000/posts/Firebase-Uploading-dSYM-Manually">&lt;p&gt;I have this problem in my &lt;strong&gt;Production Scheme&lt;/strong&gt; when someone user crashes their app and
 the dSYM's were not uploaded in our Firebase. It seems that it needs a lot of work to do in order to upload the dYSM's.
 Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.&lt;/p&gt;
 
