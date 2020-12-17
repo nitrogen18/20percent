@@ -18,19 +18,19 @@ Going back to CI/CD, these are my current configuration in our CI Server with in
 First trigger will starts on CHAIN-PRODUCTION. At the end of workflow, it triggers the next Workflow which is ```CHAIN-STAGING```
 
 Workflow: **CHAIN-PRODUCTION**
-* Stack: Xcode11.7.x, on macOS 10.15.6 (Catalina)
-* Env var: $BITRISE_GIT_BRANCH = master
+* **Stack:** ```Xcode11.7.x, on macOS 10.15.6 (Catalina)```
+* **Env var:** $BITRISE_GIT_BRANCH = **master**
 - Before upgrading my Xcode to 12, my last setup was using XCode Version 11.7, so i change some configuration based on my last Xcode and MacOS.
-    - Xcode 11.7 , macOS 10.x (Catalina)
+    - *Xcode 11.7 , macOS 10.x (Catalina)*
 
 Workflow: **CHAIN-STAGING**
-* Stack: Xcode 12.2.x on macOS 10.15.6 (Catalina)
-* Env var: $BITRISE_GIT_BRANCH = develop (default)
+* **Stack:** ```Xcode 12.2.x on macOS 10.15.6 (Catalina)```
+* **Env var:** $BITRISE_GIT_BRANCH = **develop (default)**
 - Since my current Xcode is already version 12.x (Xcode12), I used this version to mock up with my current setup except the OS. I've upgraded my OS to BigSur 12 already but the currently available stacks on Bitrise were Catalina, Mojave and High Sierra which already have builtin Xcode Version.
-    - Xcode 12.2.x, macOS 10.x (Catalina)
+    - *Xcode 12.2.x, macOS 10.x (Catalina)*
 
 Note: I added Sample ENV Login in Xcode
-Select Scheme > Test > Arguments > Environment Variables > Name Value, then add your ENV Values
+Select ```Scheme > Test > Arguments > Environment Variables > Name Value```, then add your ENV Values
 
 **Simple CI Ideas:**
 

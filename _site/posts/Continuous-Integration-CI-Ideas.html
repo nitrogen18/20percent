@@ -141,28 +141,28 @@
 
 <p>Workflow: <strong>CHAIN-PRODUCTION</strong></p>
 <ul>
-  <li>Stack: Xcode11.7.x, on macOS 10.15.6 (Catalina)</li>
-  <li>Env var: $BITRISE_GIT_BRANCH = master</li>
+  <li><strong>Stack:</strong> <code class="highlighter-rouge">Xcode11.7.x, on macOS 10.15.6 (Catalina)</code></li>
+  <li><strong>Env var:</strong> $BITRISE_GIT_BRANCH = <strong>master</strong></li>
   <li>Before upgrading my Xcode to 12, my last setup was using XCode Version 11.7, so i change some configuration based on my last Xcode and MacOS.
     <ul>
-      <li>Xcode 11.7 , macOS 10.x (Catalina)</li>
+      <li><em>Xcode 11.7 , macOS 10.x (Catalina)</em></li>
     </ul>
   </li>
 </ul>
 
 <p>Workflow: <strong>CHAIN-STAGING</strong></p>
 <ul>
-  <li>Stack: Xcode 12.2.x on macOS 10.15.6 (Catalina)</li>
-  <li>Env var: $BITRISE_GIT_BRANCH = develop (default)</li>
+  <li><strong>Stack:</strong> <code class="highlighter-rouge">Xcode 12.2.x on macOS 10.15.6 (Catalina)</code></li>
+  <li><strong>Env var:</strong> $BITRISE_GIT_BRANCH = <strong>develop (default)</strong></li>
   <li>Since my current Xcode is already version 12.x (Xcode12), I used this version to mock up with my current setup except the OS. I've upgraded my OS to BigSur 12 already but the currently available stacks on Bitrise were Catalina, Mojave and High Sierra which already have builtin Xcode Version.
     <ul>
-      <li>Xcode 12.2.x, macOS 10.x (Catalina)</li>
+      <li><em>Xcode 12.2.x, macOS 10.x (Catalina)</em></li>
     </ul>
   </li>
 </ul>
 
 <p>Note: I added Sample ENV Login in Xcode
-Select Scheme &gt; Test &gt; Arguments &gt; Environment Variables &gt; Name Value, then add your ENV Values</p>
+Select <code class="highlighter-rouge">Scheme &gt; Test &gt; Arguments &gt; Environment Variables &gt; Name Value</code>, then add your ENV Values</p>
 
 <p><strong>Simple CI Ideas:</strong></p>
 

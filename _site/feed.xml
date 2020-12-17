@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-17T16:07:14+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> iOS Dev Notes</title><entry><title type="html">Simple Continuous Integration Ideas (CI)</title><link href="http://localhost:4000/posts/Continuous-Integration-CI-Ideas" rel="alternate" type="text/html" title="Simple Continuous Integration Ideas (CI)" /><published>2020-05-10T00:00:00+08:00</published><updated>2020-05-10T00:00:00+08:00</updated><id>http://localhost:4000/posts/Continuous-Integration-CI-Ideas</id><content type="html" xml:base="http://localhost:4000/posts/Continuous-Integration-CI-Ideas">&lt;p&gt;Continuous Integration and Deployment (CI/CD) is a must in developing an apps specially if we want to make our life easier. It automates our daily task in a sense of someone doing our repetitive actions instead of us. By integrating Continuous Integration/Deployment, there's a machine that acts as a bot and do certain acts. Some CI/CD Server provides steps for developer to choose based on their ideal workflow. There were a lot of rules to be chosen and the most popular were the Unit Tests and Automatic Deployment which automatically archive and deploy the app in a certain App platform (Firebase/Appstore/Playstore) etc.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-17T16:19:26+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html"> iOS Dev Notes</title><entry><title type="html">Simple Continuous Integration Ideas (CI)</title><link href="http://localhost:4000/posts/Continuous-Integration-CI-Ideas" rel="alternate" type="text/html" title="Simple Continuous Integration Ideas (CI)" /><published>2020-05-10T00:00:00+08:00</published><updated>2020-05-10T00:00:00+08:00</updated><id>http://localhost:4000/posts/Continuous-Integration-CI-Ideas</id><content type="html" xml:base="http://localhost:4000/posts/Continuous-Integration-CI-Ideas">&lt;p&gt;Continuous Integration and Deployment (CI/CD) is a must in developing an apps specially if we want to make our life easier. It automates our daily task in a sense of someone doing our repetitive actions instead of us. By integrating Continuous Integration/Deployment, there's a machine that acts as a bot and do certain acts. Some CI/CD Server provides steps for developer to choose based on their ideal workflow. There were a lot of rules to be chosen and the most popular were the Unit Tests and Automatic Deployment which automatically archive and deploy the app in a certain App platform (Firebase/Appstore/Playstore) etc.&lt;/p&gt;
 
 &lt;p&gt;I've already tried &lt;code class=&quot;highlighter-rouge&quot;&gt;Continuous Deployment&lt;/code&gt; step which automatically deploys &lt;code class=&quot;highlighter-rouge&quot;&gt;.ipa&lt;/code&gt; (iOS Appstore Package) file to Firebase instead of doing manual steps. It's very helpful specially for the people who are doing a lot of multitasking.&lt;/p&gt;
 
@@ -15,28 +15,28 @@
 
 &lt;p&gt;Workflow: &lt;strong&gt;CHAIN-PRODUCTION&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Stack: Xcode11.7.x, on macOS 10.15.6 (Catalina)&lt;/li&gt;
-  &lt;li&gt;Env var: $BITRISE_GIT_BRANCH = master&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Stack:&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Xcode11.7.x, on macOS 10.15.6 (Catalina)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Env var:&lt;/strong&gt; $BITRISE_GIT_BRANCH = &lt;strong&gt;master&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;Before upgrading my Xcode to 12, my last setup was using XCode Version 11.7, so i change some configuration based on my last Xcode and MacOS.
     &lt;ul&gt;
-      &lt;li&gt;Xcode 11.7 , macOS 10.x (Catalina)&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Xcode 11.7 , macOS 10.x (Catalina)&lt;/em&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Workflow: &lt;strong&gt;CHAIN-STAGING&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Stack: Xcode 12.2.x on macOS 10.15.6 (Catalina)&lt;/li&gt;
-  &lt;li&gt;Env var: $BITRISE_GIT_BRANCH = develop (default)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Stack:&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Xcode 12.2.x on macOS 10.15.6 (Catalina)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Env var:&lt;/strong&gt; $BITRISE_GIT_BRANCH = &lt;strong&gt;develop (default)&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;Since my current Xcode is already version 12.x (Xcode12), I used this version to mock up with my current setup except the OS. I've upgraded my OS to BigSur 12 already but the currently available stacks on Bitrise were Catalina, Mojave and High Sierra which already have builtin Xcode Version.
     &lt;ul&gt;
-      &lt;li&gt;Xcode 12.2.x, macOS 10.x (Catalina)&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Xcode 12.2.x, macOS 10.x (Catalina)&lt;/em&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Note: I added Sample ENV Login in Xcode
-Select Scheme &amp;gt; Test &amp;gt; Arguments &amp;gt; Environment Variables &amp;gt; Name Value, then add your ENV Values&lt;/p&gt;
+Select &lt;code class=&quot;highlighter-rouge&quot;&gt;Scheme &amp;gt; Test &amp;gt; Arguments &amp;gt; Environment Variables &amp;gt; Name Value&lt;/code&gt;, then add your ENV Values&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Simple CI Ideas:&lt;/strong&gt;&lt;/p&gt;
 

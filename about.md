@@ -9,7 +9,7 @@ content-type: eg
 
 | Competition        | Rankings          |
 | ------------- |:-------------:|
-| Ateneo Computer Programming Competition (ACPC) - *Highest Rank Achieved, Received Silver Medal and SM Gift Voucher     | 2nd      |
+| Ateneo Computer Programming Competition (ACPC) - <b>*Highest Rank Achieved, Received Silver Medal and SM Gift Voucher</b>     | <b style="color: crimson;">2nd</b>    |
 | Ateneo Competitive Programming League Tryouts (ACPL)     | 2nd |
 | LoveBytes: A Gender Equal Programming Contest | 3rd      |
 | Ateneo Programming Challenge (APC) 2016 | 4th      |
