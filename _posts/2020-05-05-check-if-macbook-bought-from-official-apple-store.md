@@ -1,5 +1,5 @@
 ---
-title: Check if Macbook bought in Offical Apple Store
+title: Check if Macbook bought from Offical Apple Store
 tags: Macbook
 comments: false
 ---
