@@ -23,7 +23,9 @@ In his case, he had this PhotoListViewController with a lot of business logic li
 showing/hiding table view, also with a dependency API Service. He points out its too complicated since there were different kind of
 presentation logic in one file which resembles in my case(MVC), thats why the MVC is also called as **Massive View Controller**.
 
-Based on my readings there were good solution for this; is to implement a Software Architecture Pattern that implements **Presentation/Domain Layer** which all business process will be put in here. There are some of Software Architecture Pattern that implements it, the **MVP** and **MVVC** are widely know for this that has the **Separation of Concern** to other layer which gives benefit to implement an extensive **Unit Test** for every Data/UI component.
+Based on my readings there were good solution for this; is to implement a Software Architecture Pattern that implements **Presentation/Domain Layer** which all business process will be put in here. There are some of Software Architecture Pattern that implements it, the **MVP** and **MVVC** are widely know for this that has the **Separation of Concern** to other layer which gives benefit to implement an extensive **Unit Test** for every Data/UI component. Also included some **High Learning Curve Architecture Design Patterns** which are **VIPER** and **REDUX**. 
+
+Hoping to tackle this in the near future.
 
 <br>
 <br>
