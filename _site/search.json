@@ -44,7 +44,7 @@
 
       "title"    : "Check if Macbook bought in Offical Apple Store",
       "url"      : "/posts/check-if-macbook-bought-in-official-apple-store",
-      "content"  : "Check if the Macbook bought via Official Apple Store via Check Coverage.\n\nLink: https://checkcoverage.apple.com/\n\nSteps:\n\n  Apple icon - top left &gt; About this Mac &gt; Serial Number.\n  Put the Serial Number to textbox.\n  Check if it's Valid Purchase Date."
+      "content"  : "Check if the Macbook bought from Official Apple Store via Check Coverage of Apple Website. If the result shows Valid Purchase Date, it means that the Macbook is\n\nLink: https://checkcoverage.apple.com/\n\nSteps:\n\n  Apple icon - top left &gt; About this Mac &gt; Serial Number.\n  Put the Serial Number to textbox.\n  Check if it's Valid Purchase Date.\n\n\n\n\nIf you want to check an invalid Serial Number, you can read this thread about Invalid Serial Macbook Pro.\n\nSerial Number: C02LJCSMSD56\n\nSource: Link"
 
     },
   

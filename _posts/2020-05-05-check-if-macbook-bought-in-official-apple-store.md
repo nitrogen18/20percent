@@ -4,7 +4,7 @@ tags: Macbook
 comments: false
 ---
 
-Check if the Macbook bought via **Official Apple Store** via **Check Coverage**.
+Check if the Macbook bought from **Official Apple Store** via **Check Coverage** of Apple Website. If the result shows Valid Purchase Date, it means that the Macbook is 
 
 **Link:** [https://checkcoverage.apple.com/](https://checkcoverage.apple.com/)
 
@@ -14,3 +14,14 @@ Steps:
   3. Check if it's ```Valid Purchase Date```.
 
 ![alt text](/assets/img/check-if-macbook-valid.png) 
+
+
+If you want to check an invalid Serial Number, you can read this thread about **Invalid Serial Macbook Pro**.
+
+**Serial Number:** C02LJCSMSD56
+
+**Source:** [Link](https://forums.macrumors.com/threads/so-a-guy-offered-me-a-retina-macbook-pro-but-its-serial-number-is-apparently-invalid.1713635/) 
+
+<br>
+<br>
+<br>
