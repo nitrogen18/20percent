@@ -1,0 +1,21 @@
+---
+title: Simple Swift Closure Explanation
+tags: swift
+comments: false
+---
+https://www.programiz.com/swift-programming/closures
+
+Closure is a special block integrated to Swift. It may have zero or more parameters and can have with/without return type.
+Similarity of block in C and Objective-C.
+
+Basic Terminology:
+
+Block = {}
+
+To simplify, we can compare the following sample of Function and Closure
+
+Function        vs      Closure
+
+
+
+
