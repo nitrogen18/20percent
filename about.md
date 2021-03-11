@@ -34,6 +34,9 @@ content-type: eg
 
 <br>
 
+![alt text](/assets/img/acm/acm-1.png "Logo Title Text 1")
+![alt text](/assets/img/acm/acm-2.png "Logo Title Text 1")
+
 | Organization        | Information           |
 | ------------- |:-------------:|
 | ACM (Association for Computing Machinery) - Student Membership      | Given by ICPC Council for qualifying in ACM ICPC Asia-Manila (Asia Pacific Regional) Programming Contest 2017 |
