@@ -34,7 +34,7 @@ content-type: eg
 
 <br>
 
-![alt text](/assets/img/acm/acm-1.png "Logo Title Text 1")
+![alt text](/assets/img/acm/amc-1.png "Logo Title Text 1")
 ![alt text](/assets/img/acm/acm-2.png "Logo Title Text 1")
 
 | Organization        | Information           |
