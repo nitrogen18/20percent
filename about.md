@@ -34,8 +34,8 @@ content-type: eg
 
 <br>
 
-![alt text](/assets/img/acm/amc-1.png "Logo Title Text 1")
-![alt text](/assets/img/acm/acm-2.png "Logo Title Text 1")
+![alt text](/assets/img/acm/acm-resize-1.png "Logo Title Text 1")
+![alt text](/assets/img/acm/acm-resize-2.png "Logo Title Text 1")
 
 | Organization        | Information           |
 | ------------- |:-------------:|
@@ -59,7 +59,7 @@ content-type: eg
 
 ![alt text](/assets/img/acm-asia-manila-cert.png "Logo Title Text 1")
 
-![alt text](/assets/img/all-leaderboard.png "Logo Title Text 1")
+![alt text](/assets/img/all-leaderboard-cleanlogo.png "Logo Title Text 1")
 
 
 <br>
