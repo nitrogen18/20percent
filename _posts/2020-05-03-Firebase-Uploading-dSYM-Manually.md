@@ -36,6 +36,11 @@ platform = ios
 
 ```
 # BASH
+# First time install firebase on MacOS Terminal? use this
+curl -sL https://firebase.tools | bash
+
+# Start
+
 firebase login
 firebase projects:list # To check the projects, for verification
 ```
@@ -55,6 +60,10 @@ Second Script:
 ![alt text](/assets/img/crashlytics-upload.png)
 
 I used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.
+
+Note: "upload-symbols" can't be opened because Apple cannot check it for malicious software.
+[https://technuisance.com/crashlytics/upload-symbols-cant-be-opened-because-apple-cannot-check-it-for-malicious-software.html](https://technuisance.com/crashlytics/upload-symbols-cant-be-opened-because-apple-cannot-check-it-for-malicious-software.html)
+Allow it via System Preferences > Security & Privacy > Click Allow
 
 <br>
 PS: It works! If we manually upload the dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce error alert anymore and the future errors it will be preceded and process by the Firebase/Crashlytics.
