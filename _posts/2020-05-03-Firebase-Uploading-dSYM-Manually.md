@@ -6,9 +6,9 @@ comments: false
 
 I have this problem in my **Production Scheme** when someone user crashes their app and
 the dSYM's were not uploaded in our Firebase. It seems that it needs a lot of work to do in order to upload the dYSM's.
-Based on the guide provided by Firebase, there are two ways to upload the dYSM's. First is to include script before build the iOS Projects and second is to do it manually. What I did is to do it manually by doing some minimal bash commands.
+Based on the guidelines provided by Firebase, there are two ways to upload the dYSM's. The first is to include script before build the iOS Projects and the second is to do it manually. What I did is to do it manually by doing some minimal bash commands.
 
-These are my mostly used **BASH** commands.
+These are my most used **BASH** commands.
 ```
 ls
 ls -l
@@ -59,14 +59,14 @@ Second Script:
 
 ![alt text](/assets/img/crashlytics-upload.png)
 
-I used second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.
+I used the second script and shows success on my Terminal but the Firebase still reflects the warning. Maybe it works or maybe not.
 
 Note: "upload-symbols" can't be opened because Apple cannot check it for malicious software.
 [https://technuisance.com/crashlytics/upload-symbols-cant-be-opened-because-apple-cannot-check-it-for-malicious-software.html](https://technuisance.com/crashlytics/upload-symbols-cant-be-opened-because-apple-cannot-check-it-for-malicious-software.html)
 Allow it via System Preferences > Security & Privacy > Click Allow
 
 <br>
-PS: It works! If we manually upload the dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce error alert anymore and the future errors it will be preceded and process by the Firebase/Crashlytics.
+PS: It works! If we manually upload the dSYM before this image below occurs, the error alert will still remain, but the following errors will not produce an error alert anymore and the future errors will be preceded, and process by the Firebase/Crashlytics.
 ![alt text](/assets/img/dsym-error.png)
 
 Better to have a script when we archive the project that automatically uploads the dSYM into Crashlytics. Possible solutions would be putting a script in Xcode after building the Production, or automate it via CI/CD Bitrise.
